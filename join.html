@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join</title>
+  <script src="https://kit.fontawesome.com/16312fa746.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header id="header_sub">
+    <div class="inner">
+      <h1><a href="index.html">Nudie Jeans</a></h1>
+      <nav class="menuWeb">
+        <ul id="gnb">
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="youtube.html">YOUTUBE</a></li>
+          <li><a href="gallery.html">GALLERY</a></li>
+          <li><a href="community.html">COMMUNITY</a></li>
+          <li><a href="location.html">LOCATION</a></li>
+        </ul>
+        <ul class="util">
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Help</a></li>
+          <li><a href="#">Login</a></li>
+          <li><a href="join.html">Join</a></li>
+          <li><a href="#">Sitemap</a></li>
+        </ul>
+      </nav>
+      <a href="#" class="btnCall">
+        <span>메뉴호출</span>
+      </a>
+      <nav class="menuMo">
+        <h1>
+          <a href="index.html">DCODELAB</a>
+          <span>UI/UX DEVELOPMENT INSTITUTE</span>
+        </h1>
+        <ul id="gnbMo">
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="youtube.html">YOUTUBE</a></li>
+          <li><a href="community.html">COMMUNITY</a></li>
+          <li><a href="gallery.html">GALLERY</a></li>
+          <li><a href="location.html">LOCATION</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+  <section class="content join">
+    <!-- <div class="sub_visual"></div> -->
+    <div class="inner">
+      <div class="left">
+        <img src="./img/big/join.jpg" alt="">
+      </div>
+      <div class="right">
+        <h1>Join Us</h1>
+        <form action="result.html" method="get">
+          <fieldset>
+            <legend class="h">회원가입양식폼</legend>
+            <table>
+              <caption class="h">회원정보 입력양식 테이블</caption>
+              <tr scope="row">
+                <th><label for="id">USER ID</label></th>
+                <td>
+                  <input type="text" name="id" id="id" placeholder="아이디를 입력해 주세요" required>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><label for="pwd1">PASSWORD</label></th>
+                <td>
+                  <input type="password" name="pwd1" id="pwd1" placeholder="비밀번호를 입력해 주세요" required>
+                </td>
+              </tr>
+
+              <tr>
+                <th scope="row">HOBBY</th>
+                <td>
+                  <p class="hobbyTxt">취미를 하나 이상 선택해 주세요.
+                  </p>
+                  <div class="checks">
+                  <input type="checkbox" name="hobby" id="game" value="game">
+                  <label for="game">GAME</label>
+                </div>
+                
+                <div class="checks">
+                  <input type="checkbox" name="hobby" id="music" value="music">
+                  <label for="music">MUSIC</label>
+                  </div>
+
+                  <div class="checks">
+                    <input type="checkbox" name="hobby" id="reading" value="reading">
+                  <label for="reading">READING</label>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">GENDER</th>
+                <td>
+                  <p class="genderTxt">
+                    성별을 선택해 주세요.
+                  </p>
+                  <div class="radio">
+                    <input type="radio" name="gender" id="male" value="male">
+                    <label for="male">MALE</label>
+
+                  </div>
+                  <div class="radio">
+                    <input type="radio" name="gender" id="female" value="female">
+                    <label for="female"> FEMALE</label>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><label for="email">E-MAIL</label></th>
+                <td>
+                  <input type="text" name="email" id="email" placeholder="이메일주소를 입력해 주세요">
+                </td>
+              </tr>
+              <tr>
+                <th colspan="2">
+                  <input type="submit" value="Join">
+                </th>
+              </tr>
+            </table>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </section>
+  <footer id="footer_sub">
+    <div class="inner">
+      <h1>Nudie Jeans</h1>
+      <ul>
+        <li><a href="#">Policy</a></li>
+        <li><a href="#">Terms</a></li>
+        <li><a href="#">Customer</a></li>
+        <li><a href="#">Contact us</a></li>
+      </ul>
+      <address>
+        Nudie Jeans Marketing AB
+        Västra Hamngatan 6
+        SE-411 17 Göteborg
+        Sweden <br />
+        Phone: +46 10 1515600
+        Fax: +46 10 15 15 699
+      </address>
+      <p>© 2022 Nudie Jeans Co. All rights reserved. <br>
+        Privacy, Cookie Policy & Cookie Settings</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,39 @@
+*{ margin:0; padding:0; box-sizing:border-box; }
+ul,ol,li{ list-style:none; }
+a{ text-decoration:none;color:#111;	cursor: pointer; }
+table{border-collapse:collapse; }
+fieldset{ border:none; }
+.h{ position:absolute; top:-9999px; opacity:0; }
+.wrap::after{ content:''; display:block; clear:both; }
+.left {float:left}
+.right {float: right;}
+
+
+
+
+/*input*/
+input[type=text]:focus, 
+  input[type=password]:focus,
+  input[type=email]:focus  {
+  outline:none;
+  border: 2px solid $pointColor !important;
+}
+
+/*radio*/
+.radio {position: relative;}
+.radio input[type="radio"] { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip:rect(0,0,0,0); border: 0; }
+.radio input[type="radio"] + label { display: inline-block; position: relative; padding-left: 30px; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; }
+.radio input[type="radio"] + label:before { content: ''; position: absolute; left: 0; top: -1px; width: 15px; height: 15px; text-align: center; background: #fafafa; border: 1px solid #cacece; border-radius: 100%; box-shadow: 0px 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05); }
+.radio input[type="radio"]:checked + label:after { content: ''; position: absolute; top: 3px; left: 4px; width: 9px; height: 9px; background:  $pointColor; border-radius: 100%; }
+
+/*checkbox*/
+.checks {position:relative;}
+.checks input[type="checkbox"] {  /* 실제 체크박스는 화면에서 숨김 */
+  position: absolute;  width: 1px;  height: 1px;  padding: 0;  margin: -1px;  overflow: hidden;  clip:rect(0,0,0,0);  border: 0}
+.checks input[type="checkbox"] + label {  display: inline-block;  position: relative;  cursor: pointer;  -webkit-user-select: none;  -moz-user-select: none;  -ms-user-select: none;}
+.checks input[type="checkbox"] + label:before { 
+  content: ' ';  display: inline-block;  width: 15px;height: 15px; line-height: 15px;  margin: -2px 8px 0 0;  text-align: center; 
+  vertical-align: middle;  background: #fafafa;  border: 1px solid #cacece;  border-radius : 3px;}
+
+.checks input[type="checkbox"]:checked + label:before {  
+  content: '';background:url(../img/ico/ico_chk.png) no-repeat center;background-size:9px 7px;   background-color: $pointColor; }

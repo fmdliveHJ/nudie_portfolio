@@ -1,0 +1,327 @@
+.community {
+
+  h2 {
+    position: relative;
+    font-size: 30px;
+    margin-bottom: 20px;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 20px;
+      height: 2px;
+      background-color: $bgColor;
+    }
+  }
+  .inner {
+    .top_box {
+      background: #f0f8ed;
+      padding: 60px;
+      margin-bottom: 50px;
+      box-sizing: border-box;
+      .pic {
+        width: 80%;
+        height: 350px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .text_box {
+        position: absolute;
+        top: 48%;
+        left: 50%;
+        transform: translateY(-50%);
+        height: 300px;
+        width: 500px;
+        background: #fff;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        z-index: 1;
+        padding: 40px;
+
+        h1 {
+          position:relative;
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            left:0;
+            width: 40px;
+            height: 2px;
+            background-color: $bgColor;
+          }
+        }
+      }
+    }
+
+    table {
+      width: 100%;
+      border-bottom: 2px solid $bgColor;
+      margin-bottom: 50px;
+
+      tr {
+        &:hover {
+          background: #f77e34;
+          color: #fff;
+
+          a {
+            color: #fff;
+          }
+        }
+
+        th {
+          padding: 15px;
+          background: #fff;
+          color: #111;
+          border-bottom: 1px solid #111;
+
+          &:nth-of-type(1) {
+            width: 10%;
+          }
+
+          &:nth-of-type(3) {
+            width: 15%;
+          }
+
+          &:nth-of-type(4) {
+            width: 15%;
+          }
+        }
+
+        td {
+          padding: 13px;
+          border-bottom: 1px solid #ddd;
+          text-align: center;
+
+          &:nth-of-type(2) {
+            text-align: left;
+          }
+
+          &:nth-of-type(3) {
+            font-family: "맑은 고딕";
+          }
+
+          a {
+            color: #333;
+            font-family: 'arial';
+            line-height: 1.4;
+
+          }
+        }
+      }
+    }
+
+    .pagination {
+      width: 100%;
+      text-align: center;
+
+      &::after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+
+      .prev {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 20px;
+        color: #ddd;
+        text-align: center;
+        transition:0.3s;
+        &:hover {
+          background:$bgColor;
+          color:#fff;
+        }
+      }
+
+      .next {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 20px;
+        color: #ddd;
+        text-align: center;
+        transition:0.3s;
+        &:hover {
+          background:$bgColor;
+          color:#fff;
+        }
+      }
+
+      .numbers {
+        position:relative;
+        top:-3px;
+        display: inline-block;
+        font-size: 0;
+
+        a {
+          display: inline-block;
+          width: 30px;
+          height: 30px;
+
+          font: 11px/30px 'arial';
+          color: #666;
+          margin: 0 0;
+          transition: 0.5s;
+
+          &:hover {
+            background: $bgColor;
+            border-color: orange;
+            color: #fff;
+          }
+
+          &.on {
+            background: $bgColor;
+            border-color: orange;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*tablet ----------------------------------------*/
+@media screen and (max-width:$tablet) {
+  .community {
+    .inner {
+      h1 {
+        font-size: 40px;
+
+        span {
+          display: block;
+          margin-top: 10px;
+
+          &::before {
+            margin-left: 0;
+          }
+        }
+      }
+
+      .top_box {
+        padding: 30px;
+
+        .pic {
+          width: 100%;
+          height: 250px;
+        }
+        .text_box {
+          position: relative;
+          top: auto;
+          left: 0%;
+          transform: translateY(0%);
+          height: 35%;
+          width: 100%;
+          background: #fff;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          z-index: 1;
+          padding: 20px;
+
+        }
+      }
+
+      table {
+        tr {
+          th {
+            &:nth-of-type(1) {
+              width: 14%;
+            }
+
+            &:nth-of-type(3) {
+              width: 17%;
+            }
+
+            &:nth-of-type(4) {
+              width: 0%;
+              display: none;
+            }
+          }
+
+          td {
+            &:nth-of-type(4) {
+              width: 0%;
+              display: none;
+            }
+          }
+        }
+      }
+      .pagination {
+        .numbers {
+          a {
+            &:nth-of-type(6) {
+              display: none;
+            }
+            &:nth-of-type(7) {
+              display: none;
+            }
+            &:nth-of-type(8) {
+              display: none;
+            }
+            &:nth-of-type(9) {
+              display: none;
+            }
+            &:nth-of-type(10) {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*mobile ------------------------------------------*/
+@media screen and (max-width:$mobile) {
+  .community {
+    .inner {
+      .top_box {
+        padding: 0;
+        .pic {
+          height: 250px;
+        }
+        .text_box {
+          h1 {
+            margin-bottom: 20px;
+            font-size: 25px;
+          }
+          p{
+            font-size: 14px;
+          }
+        }
+      }
+      table {
+        tr {
+          th {
+            &:nth-of-type(1) {
+              width: 0%;
+              display: none;
+            }
+            &:nth-of-type(3) {
+              width: 29%;
+            }
+          }
+          td {
+            font-size: 14px;
+            &:nth-of-type(1) {
+              width: 0%;
+              display: none;
+            }
+            a {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+      .pagination {
+        .numbers {
+          display: none;
+        }
+      }
+    }
+  }
+}

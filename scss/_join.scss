@@ -1,0 +1,257 @@
+.join {
+  height: calc(100vh - 121px);
+
+  .inner {
+    height: 100%;
+
+    &:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    .left {
+      height: 100%;
+      width: 50%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .right {
+      float: right;
+      width: 50%;
+      height: 100%;
+      padding: 50px;
+      box-sizing: border-box;
+
+      h1 {
+        margin-bottom: 30px;
+
+        &::after {
+          width: 30px;
+        }
+      }
+
+      table {
+        width: 100%;
+
+        th {
+          display: block;
+          width: 100%;
+          text-align: left;
+          padding: 0;
+          font: bold 14px/1 'arial';
+          color: #666;
+
+          &:last-child {
+            border: none;
+            text-align: center;
+            background: #fff;
+            font-size: 0;
+          }
+
+          input[type=submit] {
+            width: 150px;
+            height: 40px;
+            border: 1px solid #000;
+            background: none;
+            font: bold 14px/1 'arial';
+            color: #111;
+            margin: 0 10px;
+            transition: 0.5s;
+            cursor: pointer;
+            outline: 0;
+
+            &:hover {
+              color: #fff;
+              border: $bgColor;
+              background: $bgColor;
+            }
+          }
+        }
+
+        td {
+          display: block;
+          width: 100%;
+          border-bottom: 1px solid #bbb;
+          padding: 10px 0;
+          margin-bottom: 40px;
+
+          input[type=text],
+          input[type=password],
+          select {
+            width: 100%;
+            height: 30px;
+            border: none;
+            padding: 0 5px;
+          }
+
+          label {
+            margin-right: 10px;
+          }
+
+          .radio,
+          .checks {
+            display: inline-block;
+          }
+
+          .hobbyTxt,
+          .genderTxt {
+            font: 12px/1 'arial';
+            color: hotpink;
+            margin-bottom: 5px;
+            display: none;
+          }
+
+        }
+      }
+    }
+
+  }
+}
+
+/*tablet ------------------------------------------------------*/
+@media screen and (max-width:$tablet) {
+  .join {
+    .inner {
+      .left {
+        width: 50%;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .right {
+        float: right;
+        width: 50%;
+        height: 100%;
+        padding: 30px 10px;
+        box-sizing: border-box;
+
+        h1 {
+          display: inline-block;
+          margin-bottom: 30px;
+          font-size: 30px;
+
+          &::after {
+            width: 100%;
+          }
+        }
+
+        table {
+          width: 100%;
+
+          th {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 0;
+            font: bold 14px/1 'arial';
+            color: #666;
+
+            &:last-child {
+              border: none;
+              text-align: center;
+              background: #fff;
+              font-size: 0;
+            }
+          }
+
+          td {
+            label {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*tablet*/
+
+/*mobile --------------------------------------------------------*/
+@media screen and (max-width:$mobile) {
+  .join {
+    height: auto;
+    padding-bottom: 0;
+
+    .inner {
+      position: relative;
+      padding: 70px 30px;
+
+      .left {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+      }
+
+      .right {
+        position: relative;
+        z-index: 1;
+        float: right;
+        width: 100%;
+        height: auto;
+        padding: 30px 10px;
+        box-sizing: border-box;
+        background: rgba(0, 0, 0, 0.5);
+
+        h1 {
+          margin-bottom: 30px;
+          font-size: 30px;
+          color: #fff;
+        }
+
+        table {
+          width: 100%;
+
+          th {
+            color: #fff;
+
+            &:last-child {
+              background: none;
+            }
+
+            input[type=submit] {
+              color: #fff;
+              border: 1px solid #fff;
+            }
+          }
+
+          td {
+            display: block;
+            width: 100%;
+            border-bottom: 1px solid #bbb;
+            padding: 10px 0;
+            margin-bottom: 20px;
+
+            input[type=text],
+            input[type=password],
+            select {
+              width: 100%;
+              height: 30px;
+              border: none;
+              padding: 5px;
+            }
+
+            label {
+              margin-right: 0;
+              color: #fff
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
