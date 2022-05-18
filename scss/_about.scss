@@ -1,6 +1,19 @@
 
 $orgLineColor :#ff6100;
 .about {
+  h2 {
+    font-size: 3em;
+    margin-bottom: 50px;
+    position:relative;
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 20px;
+      height: 2px;
+      background-color: $bgColor;
+    }
+  }
   .about_box {
     position: relative;
     padding-bottom: 120px;
@@ -41,6 +54,8 @@ $orgLineColor :#ff6100;
 
       h2 {
         margin-bottom: 30px;
+        text-align: left;
+        font-size: 20px;
       }
 
       p {
@@ -55,11 +70,7 @@ $orgLineColor :#ff6100;
     padding-top: 100px;
     padding-bottom: 80px;
 
-    h2 {
-      text-align: center;
-      font-size: 2em;
-      margin-bottom: 50px;
-    }
+    
     ul {
       margin: 0 -20px;
       padding: 0 40px;
@@ -125,17 +136,103 @@ $orgLineColor :#ff6100;
     }
   }
   //is_about 
+  .about_with {
+    margin-top:100px;
+    position: relative;
+    height:200vh;
+    &::after {
+      content:'';
+      display: block;
+      clear: both;
+    }
+    article {
+      width:40%;
+      position: absolute;
+      &::after {
+        content:'';
+        display: block;
+        clear: both;
+      }
+      .text_con {
+        border:5px solid #85afbf;
+        padding:30px;
+        p {
+          font-size: 20px;
+          line-height: 1.5;
+          color:#85afbf;
+        }
+      }
+      .pic {
+        position:relative;
+        z-index: 1;
+        width:100%;
+        img {width:100%;height: 400px;object-fit: cover;display: block;}
+      }
+      .text_line {
+        position: absolute;
+        width: 100%;
+        top:50%;
+        transform: translateY(-50%);
+        h3{
+          margin-bottom: 30px;
+          font-size: 40px;
+        }
+        p {
+          font-size: 18px;
+        }
+
+      }
+      &:nth-of-type(1){
+        top: 10%;
+        left: 0;
+        .text_line {
+          left:120%;
+        }
+      }
+      &:nth-of-type(2){
+        right: 0;
+        top:50%;
+        transform: translateY(-50%);
+        .text_line {
+          right:120%;
+        }
+       }
+       &:nth-of-type(3){
+        left: 0%;
+        transform: translateX(0%);
+        bottom:0;
+        .text_box {
+          background:$bgColor;
+          position: absolute;
+          z-index: 1;
+          right: -100%;
+          bottom: 0;
+          width:100%;
+          height:100%;
+          padding:50px;
+          box-sizing: border-box;
+          h3{
+            font-size: 40px;
+            color:#fff;
+            margin-bottom: 40px;
+          }
+          p {
+            font-size: 18px;
+            color:#fff;
+          }
+        }
+       }
+    }
+  }
+
+
   .Organization {
     max-width:1100px;
     margin:0 auto;
-    margin-top: 80px;
+    margin-top: 150px;
     width: 100%;
-    text-align: center;
-    h2 {
-      text-align: center;
-      font-size: 2em;
-      margin-bottom: 50px;
-    }
+
+ 
     .o_box {
       margin: 0 auto;
       width: 180px;
@@ -412,6 +509,77 @@ $orgLineColor :#ff6100;
 }
 }
 
+@media screen and (max-width:900px) {
+  .about{
+    .about_with {
+      height:auto;
+      article {
+        position:relative;
+        width:100%;
+        top:auto;
+        margin-top:50px;
+        .text_con {
+          padding:20px;
+        }
+        &:nth-of-type(1) {
+          top:auto;
+          .text_line {
+            margin-top:30px;
+            position:relative;
+            left:0;
+            top:auto;
+            transform: translateY(0);
+            h3 {
+              margin-bottom: 10px;
+              font-size: 25px;
+            }
+            p {
+              font-size: 14px;
+            }
+          }
+        }
+        &:nth-of-type(2) {
+          top:auto;
+          transform: translateY(0);
+          .text_line {
+            margin-top: 20px;
+            position: relative;
+            right: auto;
+            transform: none;
+            h3 {
+              margin-bottom:20px;
+              font-size: 25px;
+            }
+            p {
+              font-size: 14px;
+            }
+          }
+        }
+        &:nth-of-type(3) {
+          top:auto;
+          transform: translateY(0);
+          .text_box {
+            position: relative;
+            right: auto;
+            padding:20px;
+            h3 {
+              font-size: 25px;
+              margin-bottom: 10px;
+            }
+            p {
+              font-size: 14px;
+            }
+          }
+        }
+      }//article
+
+    }
+  } 
+
+  
+}
+
+
 /*mobile -------------------------------------------------------*/
 @media screen and (max-width:$mobile) {
   .about {
@@ -499,3 +667,5 @@ $orgLineColor :#ff6100;
   }
 }
 }
+
+

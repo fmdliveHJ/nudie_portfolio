@@ -10,125 +10,147 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
 </head>
+
 <body>
-  <header id="header_sub">
+  <header id="header_sub" class="join_header">
     <div class="inner">
       <h1><a href="index.html">Nudie Jeans</a></h1>
-      <nav class="menuWeb">
-        <ul id="gnb">
-          <li><a href="about.html">ABOUT</a></li>
-          <li><a href="youtube.html">YOUTUBE</a></li>
-          <li><a href="gallery.html">GALLERY</a></li>
-          <li><a href="community.html">COMMUNITY</a></li>
-          <li><a href="location.html">LOCATION</a></li>
-        </ul>
-        <ul class="util">
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Help</a></li>
-          <li><a href="#">Login</a></li>
-          <li><a href="join.html">Join</a></li>
-          <li><a href="#">Sitemap</a></li>
-        </ul>
-      </nav>
-      <a href="#" class="btnCall">
-        <span>메뉴호출</span>
-      </a>
-      <nav class="menuMo">
-        <h1>
-          <a href="index.html">DCODELAB</a>
-          <span>UI/UX DEVELOPMENT INSTITUTE</span>
-        </h1>
-        <ul id="gnbMo">
-          <li><a href="about.html">ABOUT</a></li>
-          <li><a href="youtube.html">YOUTUBE</a></li>
-          <li><a href="community.html">COMMUNITY</a></li>
-          <li><a href="gallery.html">GALLERY</a></li>
-          <li><a href="location.html">LOCATION</a></li>
-        </ul>
-      </nav>
-
     </div>
   </header>
   <section class="content join">
-    <!-- <div class="sub_visual"></div> -->
+    <div class="main">
+      <h2>We've always taken care of your jeans.
+        Now we'll take care of you.</h2>
+      <p><a href="#cont">Log in / Join us</a></p>
+    </div>
+    <ul class="join_list">
+      <li>
+        <h3><span>01</span></h3>
+        <p>Priority access to <br>
+          campaigns & events.</p>
+        <span>Be the first to know about Nudie Jeans’ campaign launches and events.</span>
+      </li>
+      <li>
+        <h3><span>02</span></h3>
+        <p>First dibs on new <br>
+          products.</p>
+        <span>You’ll be granted access to new and exclusive products before anyone else.</span>
+      </li>
+      <li>
+        <h3><span>03</span></h3>
+        <p>Extended return window</p>
+        <span>To make sure you get the right size and fit, you get a 30-day return window.</span>
+      </li>
+      <li>
+        <h3><span>04</span></h3>
+        <p>Personal guidance <br>
+          & service.</p>
+        <span>Book an appointment and enjoy personal customer service wherever you are.</span>
+      </li>
+    </ul>
     <div class="inner">
-      <div class="left">
-        <img src="./img/big/join.jpg" alt="">
+      <div id="cont" class="cont">
+        <div class="left">
+          <img src="./img/big/join.jpg" alt="">
+        </div>
+        <div class="right">
+          <h1>Join Us</h1>
+          <form action="result.html" method="get">
+            <fieldset>
+              <legend class="h">회원가입양식폼</legend>
+              <table>
+                <caption class="h">회원정보 입력양식 테이블</caption>
+                <tr scope="row">
+                  <th><label for="id">USER ID</label></th>
+                  <td>
+                    <input type="text" name="id" id="id" placeholder="아이디를 입력해 주세요" required>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row"><label for="pwd1">PASSWORD</label></th>
+                  <td>
+                    <input type="password" name="pwd1" id="pwd1" placeholder="비밀번호를 입력해 주세요" required>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th scope="row">HOBBY</th>
+                  <td>
+                    <p class="hobbyTxt">취미를 하나 이상 선택해 주세요.
+                    </p>
+                    <div class="checks">
+                      <input type="checkbox" name="hobby" id="game" value="game">
+                      <label for="game">GAME</label>
+                    </div>
+
+                    <div class="checks">
+                      <input type="checkbox" name="hobby" id="music" value="music">
+                      <label for="music">MUSIC</label>
+                    </div>
+
+                    <div class="checks">
+                      <input type="checkbox" name="hobby" id="reading" value="reading">
+                      <label for="reading">READING</label>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">GENDER</th>
+                  <td>
+                    <p class="genderTxt">
+                      성별을 선택해 주세요.
+                    </p>
+                    <div class="radio">
+                      <input type="radio" name="gender" id="male" value="male">
+                      <label for="male">MALE</label>
+
+                    </div>
+                    <div class="radio">
+                      <input type="radio" name="gender" id="female" value="female">
+                      <label for="female"> FEMALE</label>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row"><label for="email">E-MAIL</label></th>
+                  <td>
+                    <input type="text" name="email" id="email" placeholder="이메일주소를 입력해 주세요">
+                  </td>
+                </tr>
+                <tr>
+                  <th colspan="2">
+                    <input type="submit" value="Join">
+                  </th>
+                </tr>
+              </table>
+            </fieldset>
+          </form>
+        </div>
+        <!-- right -->
       </div>
-      <div class="right">
-        <h1>Join Us</h1>
-        <form action="result.html" method="get">
-          <fieldset>
-            <legend class="h">회원가입양식폼</legend>
-            <table>
-              <caption class="h">회원정보 입력양식 테이블</caption>
-              <tr scope="row">
-                <th><label for="id">USER ID</label></th>
-                <td>
-                  <input type="text" name="id" id="id" placeholder="아이디를 입력해 주세요" required>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row"><label for="pwd1">PASSWORD</label></th>
-                <td>
-                  <input type="password" name="pwd1" id="pwd1" placeholder="비밀번호를 입력해 주세요" required>
-                </td>
-              </tr>
-
-              <tr>
-                <th scope="row">HOBBY</th>
-                <td>
-                  <p class="hobbyTxt">취미를 하나 이상 선택해 주세요.
-                  </p>
-                  <div class="checks">
-                  <input type="checkbox" name="hobby" id="game" value="game">
-                  <label for="game">GAME</label>
-                </div>
-                
-                <div class="checks">
-                  <input type="checkbox" name="hobby" id="music" value="music">
-                  <label for="music">MUSIC</label>
-                  </div>
-
-                  <div class="checks">
-                    <input type="checkbox" name="hobby" id="reading" value="reading">
-                  <label for="reading">READING</label>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">GENDER</th>
-                <td>
-                  <p class="genderTxt">
-                    성별을 선택해 주세요.
-                  </p>
-                  <div class="radio">
-                    <input type="radio" name="gender" id="male" value="male">
-                    <label for="male">MALE</label>
-
-                  </div>
-                  <div class="radio">
-                    <input type="radio" name="gender" id="female" value="female">
-                    <label for="female"> FEMALE</label>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row"><label for="email">E-MAIL</label></th>
-                <td>
-                  <input type="text" name="email" id="email" placeholder="이메일주소를 입력해 주세요">
-                </td>
-              </tr>
-              <tr>
-                <th colspan="2">
-                  <input type="submit" value="Join">
-                </th>
-              </tr>
-            </table>
-          </fieldset>
-        </form>
+      <!-- content -->
+      
+    </div>
+    <!-- inner -->
+    <div class="text_box">
+      <div>
+      <p>c/o Nudie Jeans is a chance for us to get to know each other better. We won’t bait you to spend money to get
+        perks or discounts, we’ll give you those as a token of our appreciation.</p>
+      <p>
+        Without you as our customer we are nothing. But with your influence and input, we can better cater to your
+        specific needs, and create products and services that make sure you get more out of your Nudie Jeans
+        Experience.</p>
+      <p>
+        This is not the beginning of a friendship. It’s the continuation of a fruitful one.</p>
+      <p>
+        As a member, you’ll be the first to know when there’s a campaign or an event. You’ll get to call first dibs on
+        new products and online exclusives, and all your online orders and in-store purchases have an extended, 30-day
+        return window. You may be hand-picked for surveys that’ll help shape the future of Nudie Jeans.</p>
+      <p>
+        Welcome to c/o Nudie Jeans.</p>
       </div>
     </div>
+ 
   </section>
   <footer id="footer_sub">
     <div class="inner">
@@ -152,4 +174,5 @@
     </div>
   </footer>
 </body>
+
 </html>
