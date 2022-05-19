@@ -92,3 +92,27 @@ function init(frame){
   })
 }
 
+//new
+let newArrival = document.querySelector('#new ul');
+const header = document.querySelector('header');
+
+window.addEventListener('scroll', (e)=> {
+  let value = window.scrollY;
+ // console.log('scroll', value);
+  if(value > 700){
+    newArrival.classList.add('on');
+   
+  }else {
+    newArrival.classList.remove('on');
+    
+  }
+  if(value > 860){
+    header.classList.add('on');
+  }else {
+    header.classList.remove('on');  
+  }
+  
+
+
+})
+

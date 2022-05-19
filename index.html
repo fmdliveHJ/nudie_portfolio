@@ -7,9 +7,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nudie Jeans</title>
   <script src="https://kit.fontawesome.com/16312fa746.js" crossorigin="anonymous"></script>
+
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+  <!-- style -->
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- js -->
   <script src="js/anime.js"></script>
   <script src="js/main.js" defer></script>
+
 </head>
 
 <body>
@@ -51,50 +60,40 @@
   <!-- header -->
 
   <div id="visual">
-    <ul class="panel">
-      <li class="con1 on">
-        <div class="text_box">
-          <span>Bake Your Own</span>
-          <h2>New Fit! <br><strong>Rad Rufus</strong> Baked by local denim dealers Strictly limited 25 pairs</h2>
-          <p>Ten stores, ten unique versions of our new fit, Rad Rufus, limited to 25 pieces per store.</p>
-        </div>
-      </li>
-      <li class="con2">
-        <div class="text_box">
-          <span>Every pair of Nudie Jeans</span>
-          <h2>Free repairs Forever.</h2>
-          <p> comes with a promise of free repairs. And that promise is forever, no matter when, where, or how you got
-            them. Buying a pair of premium jeans is an investment, and since we provide the jeans, it’s only right we
-            take
-            care of the repairs.</p>
-        </div>
-      </li>
-      <li class="con3">
-        <div class="text_box">
-          <span>No one is an island entirely on their own</span>
-          <h2>Island Life</h2>
-          <p>is whatever you make of it: a place for recreation or adventure. Pitch your tent wherever you please,
-            accidentally spot a UFO when you’re out birding, hit the beach to catch up on your reading, or why not go
-            for
-            a swim.</p>
-        </div>
-      </li>
-    </ul>
-    <ul class="tab_list">
-      <li class="on"><a href="#">
-          <div><span>01</span>Bake Your Own</div>
-        </a></li>
-      <li><a href="#">
-          <div><span>02</span>Every pair of Nudie Jeans</div>
-        </a></li>
-      <li><a href="#">
-          <div><span>03</span>Island Life</div>
-        </a></li>
-    </ul>
-
+    <div class="visual_slider">
+      <ul class="panel swiper-wrapper">
+        <li class=" swiper-slide con1">
+          <div class="text_box">
+            <span>Bake Your Own</span>
+            <h2>New Fit! <br><strong>Rad Rufus</strong> Baked by local denim dealers Strictly limited 25 pairs</h2>
+            <p>Ten stores, ten unique versions of our new fit, Rad Rufus, limited to 25 pieces per store.</p>
+          </div>
+        </li>
+        <li class=" swiper-slide con2">
+          <div class="text_box">
+            <span>Every pair of Nudie Jeans</span>
+            <h2>Free repairs Forever.</h2>
+            <p> comes with a promise of free repairs. And that promise is forever, no matter when, where, or how you got
+              them. Buying a pair of premium jeans is an investment, and since we provide the jeans, it’s only right we
+              take
+              care of the repairs.</p>
+          </div>
+        </li>
+        <li class=" swiper-slide con3">
+          <div class="text_box">
+            <span>No one is an island entirely on their own</span>
+            <h2>Island Life</h2>
+            <p>is whatever you make of it: a place for recreation or adventure. Pitch your tent wherever you please,
+              accidentally spot a UFO when you’re out birding, hit the beach to catch up on your reading, or why not go
+              for
+              a swim.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="swiper-pagination"></div>
   </div>
   <!--// visual -->
-
   <main>
     <div class="inner">
       <section id="new">
@@ -193,6 +192,33 @@
       <!--// about  -->
     </div>
     <!--// inner  -->
+    <section id="repair">
+      <h2>Sustainability</h2>
+      <div class="inner">
+       
+        <!-- <div class="repair_con">
+          <div class="r_con">
+            <h3>Lorem, ipsum.</h3>
+            <div class="repair_slider">
+              <ul class="swiper-wrapper">
+                <li class="swiper-slide">Slide 1</li>
+                <li class="swiper-slide">Slide 2</li>
+                <li class="swiper-slide">Slide 3</li>
+              </ul>
+              <div class="repair-pagination"></div>
+              <div class="repair-prev"></div>
+              <div class="repair-next"></div>
+            </div>
+          </div>
+          <div class="r_con">
+            <h3>Lorem, ipsum.</h3>
+            <p>Lorem ipsum dolor sit.</p>
+            <a href="#none">SUBSCRIBE</a>
+          </div>
+        </div> -->
+      </div>
+    </section>
+    <!--// repair  -->
   </main>
   <!--// main -->
   <footer id="footer">
@@ -215,6 +241,38 @@
       <p>© 2022 Nudie Jeans Co. All rights reserved. <br>
         Privacy, Cookie Policy & Cookie Settings</p>
   </footer>
+  <script>
+    // visual
+    let menu = ['Bake Your Own', 'Every pair of Nudie Jeans', 'Island Life']
+    let swiper = new Swiper(".visual_slider", {
+      autoplay : {  
+        delay : 3000,   
+        disableOnInteraction : false, 
+      },
+      speed: 1000,
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '">' + (menu[index]) + '</span>';
+        },
+      },
+    });
+    // repair
+    let repair_swiper = new Swiper(".repair_slider", {
+      speed: 1000,
+      loop: true,
+      pagination: {
+        el: '.repair-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.repair-next',
+        prevEl: '.repair-prev',
+      },
+    });
+  </script>
 </body>
 
 </html>

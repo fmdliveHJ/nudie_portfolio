@@ -2143,6 +2143,15 @@ input[type=email]:focus {
   left: 0;
   width: 100%;
   z-index: 10;
+  transition: 0.5s;
+}
+
+#header.on {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+#header.on .inner {
+  height: 80px;
 }
 
 #header .inner {
@@ -2324,26 +2333,22 @@ input[type=email]:focus {
   background: #000;
 }
 
-#visual .panel {
+#visual .visual_slider {
+  height: 100%;
+  overflow: hidden;
+}
+
+#visual .visual_slider .panel {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
-#visual .panel li {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  z-index: 1;
+#visual .visual_slider .panel li {
+  position: relative;
 }
 
-#visual .panel li.on {
-  z-index: 2;
-  opacity: 10;
-}
-
-#visual .panel li .text_box {
+#visual .visual_slider .panel li .text_box {
   position: absolute;
   width: 40%;
   left: 30%;
@@ -2352,24 +2357,24 @@ input[type=email]:focus {
   z-index: 5;
 }
 
-#visual .panel li .text_box span {
+#visual .visual_slider .panel li .text_box span {
   font-size: 18px;
   color: #fff;
 }
 
-#visual .panel li .text_box h2 {
+#visual .visual_slider .panel li .text_box h2 {
   margin: 50px 0;
   font-size: 50px;
   color: #fff;
   font-family: 'Josefin Sans', sans-serif;
 }
 
-#visual .panel li .text_box p {
+#visual .visual_slider .panel li .text_box p {
   font-size: 25px;
   color: #fff;
 }
 
-#visual .panel li:after {
+#visual .visual_slider .panel li:after {
   content: '';
   display: block;
   width: 100%;
@@ -2381,16 +2386,52 @@ input[type=email]:focus {
   background-size: cover;
 }
 
-#visual .panel .con1:after {
+#visual .visual_slider .panel .con1:after {
   background-image: url(../img/main/visual01.jpg);
 }
 
-#visual .panel .con2:after {
+#visual .visual_slider .panel .con2:after {
   background-image: url(../img/main/visual02.jpg);
 }
 
-#visual .panel .con3:after {
+#visual .visual_slider .panel .con3:after {
   background-image: url(../img/main/visual03.jpg);
+}
+
+#visual .swiper-pagination {
+  z-index: 5;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: auto;
+  width: auto;
+}
+
+#visual .swiper-pagination:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+#visual .swiper-pagination span {
+  float: left;
+  display: block;
+  border-radius: 0;
+  background: #fff;
+  margin: 0;
+  height: 100px;
+  width: 200px;
+  opacity: 1;
+  color: #111;
+  font-size: 20px;
+  transition: 1s;
+  padding: 25px;
+  box-sizing: border-box;
+  font-weight: 700;
+}
+
+#visual .swiper-pagination .swiper-pagination-bullet-active {
+  background: #ee7b34;
 }
 
 #visual .tab_list {
@@ -2413,39 +2454,11 @@ input[type=email]:focus {
   width: 200px;
 }
 
-#visual .tab_list li.on {
-  background: #f4f4f4;
-}
-
-#visual .tab_list li.on a {
-  color: #111;
-}
-
-#visual .tab_list li a {
-  position: relative;
-  display: block;
-  height: 100%;
-  width: 100%;
-  padding: 20px;
-}
-
-#visual .tab_list li a div {
-  position: absolute;
-  width: 70%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-#visual .tab_list li a div span {
-  display: block;
-  font-weight: 600;
-  font-size: 20px;
-}
-
 /*main ---------------------------------------------------*/
 main {
   background: #f4f4f4;
   /*new ---------------------------------------------------*/
+  /*about ---------------------------------------------------*/
 }
 
 main .inner {
@@ -2486,6 +2499,8 @@ main #new ul li {
   float: left;
   width: calc(33.3333% - 40px);
   margin: 0 20px;
+  position: relative;
+  transition: 1s;
 }
 
 main #new ul li a {
@@ -2531,19 +2546,42 @@ main #new ul li .text_box span {
   font-size: 14px;
 }
 
-/*about ---------------------------------------------------*/
-#about {
+main #new ul li:nth-of-type(1) {
+  top: 50px;
+}
+
+main #new ul li:nth-of-type(2) {
+  top: 100px;
+}
+
+main #new ul li:nth-of-type(3) {
+  top: 150px;
+}
+
+main #new ul.on li:nth-of-type(1) {
+  top: 0;
+}
+
+main #new ul.on li:nth-of-type(2) {
+  top: 0;
+}
+
+main #new ul.on li:nth-of-type(3) {
+  top: 0;
+}
+
+main #about {
   position: relative;
   padding: 80px 0;
 }
 
-#about::after {
+main #about::after {
   content: '';
   display: block;
   clear: both;
 }
 
-#about .text_con {
+main #about .text_con {
   position: relative;
   height: 270px;
   width: 70%;
@@ -2551,33 +2589,33 @@ main #new ul li .text_box span {
   overflow: hidden;
 }
 
-#about .text_con .text_list {
+main #about .text_con .text_list {
   position: absolute;
   top: 0;
 }
 
-#about .text_con .text_list::after {
+main #about .text_con .text_list::after {
   content: '';
   display: block;
   clear: both;
 }
 
-#about .text_con .text_list li {
+main #about .text_con .text_list li {
   float: left;
   transition: 0.5s;
 }
 
-#about .text_con .text_list li h3 {
+main #about .text_con .text_list li h3 {
   font-size: 2em;
 }
 
-#about .text_con .text_list li p {
+main #about .text_con .text_list li p {
   font-size: 20px;
   line-height: 1.2;
   margin-top: 30px;
 }
 
-#about .text_con .text_list li p strong {
+main #about .text_con .text_list li p strong {
   font-weight: 700;
   display: block;
   font-size: 25px;
@@ -2585,48 +2623,89 @@ main #new ul li .text_box span {
   color: #8d8dd9;
 }
 
-#about .btn {
+main #about .btn {
   position: absolute;
   left: 0;
   bottom: 80px;
 }
 
-#about .btn::after {
+main #about .btn::after {
   content: '';
   display: block;
   clear: both;
 }
 
-#about .btn li {
+main #about .btn li {
   width: 50px;
   height: 50px;
 }
 
-#about .btn li a {
+main #about .btn li a {
   display: block;
   text-align: center;
   cursor: pointer;
 }
 
-#about .btn li a i {
+main #about .btn li a i {
   font-size: 20px;
   color: #000;
   line-height: 50px;
 }
 
-#about .btn li:nth-of-type(1) {
+main #about .btn li:nth-of-type(1) {
   background: #fff;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
-#about .btn li:nth-of-type(2) {
+main #about .btn li:nth-of-type(2) {
   background: #ee7b34;
   margin-left: 50px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
-#about .btn li:nth-of-type(2) a i {
+main #about .btn li:nth-of-type(2) a i {
   color: #fff;
+}
+
+main #repair {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  margin-top: 180px;
+  margin-bottom: 250px;
+  background: url(../img/main/repair.jpg) no-repeat center/cover;
+}
+
+main #repair h2 {
+  max-width: 1180px;
+  margin: 0 auto;
+  position: relative;
+  top: -100px;
+}
+
+main #repair .repair_con {
+  position: absolute;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 1000px;
+}
+
+main #repair .repair_con::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+main #repair .repair_con .r_con {
+  position: relative;
+  overflow: hidden;
+  width: 50%;
+  height: 300px;
+  float: left;
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  border-bottom: 3px solid #72799c;
 }
 
 /*footer ---------------------------------------*/
