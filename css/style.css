@@ -2459,6 +2459,7 @@ main {
   background: #f4f4f4;
   /*new ---------------------------------------------------*/
   /*about ---------------------------------------------------*/
+  /*repair ---------------------------------------------------*/
 }
 
 main .inner {
@@ -2466,19 +2467,31 @@ main .inner {
   margin: 0 auto;
 }
 
-main section > h2 {
+main section {
+  padding: 80px 0;
+}
+
+main section > h2,
+main section .inner > h2 {
   font-size: 3em;
   margin-bottom: 50px;
   position: relative;
 }
 
-main section > h2::after {
+main section > h2::after,
+main section .inner > h2::after {
   content: '';
   display: block;
   position: absolute;
   width: 30px;
   height: 2px;
   background-color: #ee7b34;
+}
+
+main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 main #new {
@@ -2667,37 +2680,35 @@ main #about .btn li:nth-of-type(2) a i {
   color: #fff;
 }
 
-main #repair {
+main #Sustainability .inner {
   position: relative;
+  max-width: 100%;
   width: 100%;
-  height: 80vh;
-  margin-top: 180px;
-  margin-bottom: 250px;
+  height: 800px;
   background: url(../img/main/repair.jpg) no-repeat center/cover;
 }
 
-main #repair h2 {
+main #Sustainability h2 {
   max-width: 1180px;
-  margin: 0 auto;
+  margin: 0 auto 50px;
   position: relative;
-  top: -100px;
 }
 
-main #repair .repair_con {
+main #Sustainability .repair_con {
   position: absolute;
-  bottom: -100px;
+  bottom: -80px;
   left: 50%;
   transform: translateX(-50%);
   max-width: 1000px;
 }
 
-main #repair .repair_con::after {
+main #Sustainability .repair_con::after {
   content: '';
   display: block;
   clear: both;
 }
 
-main #repair .repair_con .r_con {
+main #Sustainability .repair_con .r_con {
   position: relative;
   overflow: hidden;
   width: 50%;
@@ -2705,7 +2716,291 @@ main #repair .repair_con .r_con {
   float: left;
   background: #fff;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
-  border-bottom: 3px solid #72799c;
+  border-bottom: 3px solid #8d8dd9;
+}
+
+main #Sustainability .repair_con .r_con .repair_slider {
+  height: 100%;
+}
+
+main #Sustainability .repair_con .r_con .repair_slider ul li {
+  text-align: center;
+  padding: 50px 70px;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+main #Sustainability .repair_con .r_con .repair_slider ul li h3 {
+  font-size: 30px;
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+main #Sustainability .repair_con .r_con .repair_slider .repair-pagination {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 10;
+}
+
+main #Sustainability .repair_con .r_con .repair_slider .repair-pagination .swiper-pagination-bullet-active {
+  background: #ee7b34;
+}
+
+main #Sustainability .repair_con .r_con .repair_slider .repair-prev {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+}
+
+main #Sustainability .repair_con .r_con .repair_slider .repair-prev::after {
+  content: '';
+  display: block;
+  position: absolute;
+  border: 1px solid #111;
+  background: #fff;
+  width: 40px;
+  height: 40px;
+  transform: rotate(45deg);
+}
+
+main #Sustainability .repair_con .r_con .repair_slider .repair-prev i {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+main #Sustainability .repair_con .r_con .repair_slider .repair-next {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+}
+
+main #Sustainability .repair_con .r_con .repair_slider .repair-next::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background: #fff;
+  border: 1px solid #111;
+  width: 40px;
+  height: 40px;
+  transform: rotate(45deg);
+}
+
+main #Sustainability .repair_con .r_con .repair_slider .repair-next i {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+main #Sustainability .repair_con .r_con .text_box {
+  padding: 50px 70px;
+  box-sizing: border-box;
+}
+
+main #Sustainability .repair_con .r_con .text_box h3 {
+  font-size: 30px;
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+main #Sustainability .repair_con .r_con .text_box p {
+  text-align: center;
+  border: 1px solid #f4f4f4;
+  border-bottom: 2px solid #8d8dd9;
+  display: block;
+  padding: 10px 20px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+main #Sustainability .repair_con .r_con .text_box a {
+  margin-top: 20px;
+  text-align: center;
+  display: block;
+  padding: 10px;
+  width: 200px;
+  margin: 20px auto 0;
+  border: 1px solid #f4f4f4;
+}
+
+main #Sustainability .repair_con .r_con .text_box a i {
+  margin-left: 5px;
+}
+
+/*journal ---------------------------------------------------*/
+#journal {
+  margin-top: 80px;
+}
+
+#journal ul::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+#journal ul li {
+  float: left;
+  width: calc(25% - 20px);
+  margin: 0 10px 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #111;
+}
+
+#journal ul li .pic {
+  height: 300px;
+}
+
+#journal ul li .text_box {
+  margin-top: 30px;
+}
+
+#journal ul li .text_box p {
+  margin-top: 10px;
+}
+
+#bake {
+  background: #e5dede;
+}
+
+#bake .inner::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+#bake .inner > div {
+  width: 50%;
+}
+
+#bake .inner > div h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+#bake .inner > div p {
+  font-size: 16px;
+  color: #aaa;
+}
+
+#bake .inner .left p {
+  line-height: 1.5;
+}
+
+#bake .inner .left ul {
+  margin-top: 50px;
+}
+
+#bake .inner .left ul li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+#bake .inner .right p {
+  margin-top: 10px;
+}
+
+#bake .inner .icon_list {
+  float: left;
+  width: 100%;
+  margin-top: 70px;
+}
+
+#bake .inner .icon_list ul {
+  margin: 0 -10px;
+}
+
+#bake .inner .icon_list ul:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+#bake .inner .icon_list ul li {
+  position: relative;
+  float: left;
+  width: calc(25% - 20px);
+  margin: 0 10px;
+}
+
+#bake .inner .icon_list ul li i {
+  display: block;
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#bake .inner .icon_list ul li .text_box {
+  padding-left: 80px;
+}
+
+#bake .inner .icon_list ul li .text_box h3 {
+  margin-bottom: 10px;
+}
+
+#sns .inner {
+  position: relative;
+}
+
+#sns .inner h3 {
+  position: absolute;
+  top: calc(50% + 40px);
+  left: 50%;
+  width: 500px;
+  transform: translate(-50%, -50%);
+  background: #ee7b34;
+  text-align: center;
+  font-family: 'Josefin Sans', 'sans-serif';
+}
+
+#sns .inner h3 a {
+  display: block;
+  padding: 40px 10px;
+  box-sizing: border-box;
+  font-weight: 700;
+  color: #fff;
+}
+
+#sns .inner ul {
+  margin: 0 -10px;
+}
+
+#sns .inner ul::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+#sns .inner ul li {
+  float: left;
+  width: calc(25% - 20px);
+  margin: 0 10px 20px;
+}
+
+#sns .inner ul li .pic {
+  height: 250px;
 }
 
 /*footer ---------------------------------------*/
@@ -2780,84 +3075,6 @@ main #repair .repair_con .r_con {
   #header .inner .btnCall {
     display: block;
   }
-  /*visual ---------------------------------------------------*/
-  #visual {
-    height: calc(100vh - 101px);
-    background: url(../img/visual1.jpg) no-repeat center/cover;
-  }
-  #visual video {
-    display: none;
-  }
-  #visual .inner {
-    width: 100%;
-    padding: 0 30px;
-  }
-  #visual .inner h1 {
-    font-size: 14vmin;
-  }
-  #visual .inner a {
-    width: 100%;
-  }
-  /*news ------------------------------------------*/
-  #news {
-    padding: 100px 30px;
-  }
-  #news .inner {
-    width: 100%;
-  }
-  #news .inner .wrap article {
-    width: 49%;
-    margin-right: 2%;
-    margin-bottom: 60px;
-  }
-  #news .inner .wrap article:nth-of-type(even) {
-    margin-right: 0;
-  }
-  #news .inner .wrap article .pic {
-    height: 20vmax;
-  }
-  /*brand ----------------------------------------*/
-  #brand {
-    padding: 100px 30px;
-  }
-  #brand .inner {
-    width: 100%;
-  }
-  #brand .inner .wrap article:nth-of-type(1) {
-    width: 49%;
-    margin-right: 2%;
-  }
-  #brand .inner .wrap article:nth-of-type(1) a {
-    width: 100%;
-  }
-  #brand .inner .wrap article:nth-of-type(2) {
-    width: 49%;
-    margin-right: 0;
-    margin-bottom: 20px;
-  }
-  #brand .inner .wrap article:nth-of-type(3) {
-    width: 49%;
-  }
-  #brand .inner .wrap article:nth-of-type(4) {
-    width: 100%;
-  }
-  /* banner --------------------------------------*/
-  #banner {
-    padding: 150px 30px;
-  }
-  #banner .inner {
-    width: 100%;
-  }
-  /*comments -------------------------------------------------*/
-  #comments {
-    padding: 100px 30px;
-  }
-  #comments .inner {
-    width: 100%;
-  }
-  #comments .inner ul li a {
-    margin-bottom: 20px;
-  }
   /*footer ---------------------------------------*/
   #footer {
     padding: 80px 30px;
@@ -2869,39 +3086,6 @@ main #repair .repair_con .r_con {
 
 /*mobile ------------------------------------*/
 @media screen and (max-width: 539px) {
-  /*visual ---------------------------------------------------*/
-  #visual .inner h1 {
-    font-size: 12vmin;
-  }
-  /*news ------------------------------------------*/
-  #news .inner .wrap article {
-    width: 100%;
-    margin-right: 0%;
-  }
-  #news .inner .wrap article .pic {
-    height: 30vmax;
-  }
-  /*brand ----------------------------------------*/
-  #brand .inner .wrap article:nth-of-type(1) {
-    width: 100%;
-    height: 400px;
-    margin-right: 0%;
-    margin-bottom: 20px;
-    padding: 50px;
-  }
-  #brand .inner .wrap article:nth-of-type(2) {
-    width: 100%;
-  }
-  #brand .inner .wrap article:nth-of-type(3) {
-    width: 100%;
-  }
-  #brand .inner .wrap article:nth-of-type(4) {
-    width: 100%;
-  }
-  /* banner --------------------------------------*/
-  #banner {
-    padding: 120px 30px;
-  }
   /*footer ---------------------------------------*/
   #footer .inner ul {
     margin-top: 20px;
