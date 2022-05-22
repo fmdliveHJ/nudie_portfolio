@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&family=Noto+Sans+KR:wght@300;400&family=Oswald&family=Parisienne&family=Poiret+One&family=Quicksand:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;1,300;1,700&family=Noto+Sans+KR:wght@300;400&family=Oswald&family=Parisienne&family=Poiret+One&family=Quicksand:wght@400;500&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -2144,6 +2144,8 @@ input[type=email]:focus {
   width: 100%;
   z-index: 10;
   transition: 0.5s;
+  padding: 0 30px;
+  box-sizing: border-box;
 }
 
 #header.on {
@@ -2205,7 +2207,7 @@ input[type=email]:focus {
 
 #header .inner .util {
   position: absolute;
-  right: 30px;
+  right: 0;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -2222,7 +2224,7 @@ input[type=email]:focus {
 
 #header .inner .btnCall {
   position: absolute;
-  right: 30px;
+  right: 0;
   top: 50%;
   transform: translateY(-50%);
   width: 20px;
@@ -2235,7 +2237,7 @@ input[type=email]:focus {
   display: block;
   width: 100%;
   height: 2px;
-  background: #000;
+  background: #fff;
   position: absolute;
   top: 0;
   left: 0;
@@ -2247,7 +2249,7 @@ input[type=email]:focus {
   display: block;
   width: 100%;
   height: 2px;
-  background: #000;
+  background: #fff;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -2258,7 +2260,7 @@ input[type=email]:focus {
   display: block;
   width: 100%;
   height: 2px;
-  background: #000;
+  background: #fff;
   position: absolute;
   top: 50%;
   margin-top: -1px;
@@ -2326,140 +2328,18 @@ input[type=email]:focus {
   text-align: center;
 }
 
-/*visual ---------------------------------------------------*/
-#visual {
-  width: 100%;
-  height: 100vh;
-  background: #000;
-}
-
-#visual .visual_slider {
-  height: 100%;
-  overflow: hidden;
-}
-
-#visual .visual_slider .panel {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-#visual .visual_slider .panel li {
-  position: relative;
-}
-
-#visual .visual_slider .panel li .text_box {
-  position: absolute;
-  width: 40%;
-  left: 30%;
-  top: 30%;
-  transform: translateX(-50%);
-  z-index: 5;
-}
-
-#visual .visual_slider .panel li .text_box span {
-  font-size: 18px;
-  color: #fff;
-}
-
-#visual .visual_slider .panel li .text_box h2 {
-  margin: 50px 0;
-  font-size: 50px;
-  color: #fff;
-  font-family: 'Josefin Sans', sans-serif;
-}
-
-#visual .visual_slider .panel li .text_box p {
-  font-size: 25px;
-  color: #fff;
-}
-
-#visual .visual_slider .panel li:after {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 100%;
-  opacity: 0.7;
-  background-color: #000;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-#visual .visual_slider .panel .con1:after {
-  background-image: url(../img/main/visual01.jpg);
-}
-
-#visual .visual_slider .panel .con2:after {
-  background-image: url(../img/main/visual02.jpg);
-}
-
-#visual .visual_slider .panel .con3:after {
-  background-image: url(../img/main/visual03.jpg);
-}
-
-#visual .swiper-pagination {
-  z-index: 5;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: auto;
-  width: auto;
-}
-
-#visual .swiper-pagination:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
-#visual .swiper-pagination span {
-  float: left;
-  display: block;
-  border-radius: 0;
-  background: #fff;
-  margin: 0;
-  height: 100px;
-  width: 200px;
-  opacity: 1;
-  color: #111;
-  font-size: 20px;
-  transition: 1s;
-  padding: 25px;
-  box-sizing: border-box;
-  font-weight: 700;
-}
-
-#visual .swiper-pagination .swiper-pagination-bullet-active {
-  background: #ee7b34;
-}
-
-#visual .tab_list {
-  z-index: 5;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  background: #fff;
-}
-
-#visual .tab_list:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
-#visual .tab_list li {
-  float: left;
-  height: 100px;
-  width: 200px;
-}
-
 /*main ---------------------------------------------------*/
 main {
   background: #f4f4f4;
+  /*visual ---------------------------------------------------*/
   /*new ---------------------------------------------------*/
   /*about ---------------------------------------------------*/
+  /*Sustainability ---------------------------------------------------*/
+  /*journal ---------------------------------------------------*/
+  /*bake ---------------------------------------------------*/
   /*repair ---------------------------------------------------*/
+  /*Island ---------------------------------------------------*/
+  /*sns ---------------------------------------------------*/
 }
 
 main .inner {
@@ -2468,7 +2348,7 @@ main .inner {
 }
 
 main section {
-  padding: 80px 0;
+  padding: 100px 0;
 }
 
 main section > h2,
@@ -2494,8 +2374,133 @@ main img {
   object-fit: cover;
 }
 
-main #new {
-  padding: 80px 0;
+main #visual {
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  padding: 0;
+}
+
+main #visual .visual_slider {
+  height: 100%;
+  overflow: hidden;
+}
+
+main #visual .visual_slider .panel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+main #visual .visual_slider .panel li {
+  position: relative;
+}
+
+main #visual .visual_slider .panel li .text_box {
+  position: absolute;
+  width: 40%;
+  left: 30%;
+  top: 30%;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+
+main #visual .visual_slider .panel li .text_box span {
+  font-size: 18px;
+  color: #fff;
+}
+
+main #visual .visual_slider .panel li .text_box h2 {
+  margin: 50px 0;
+  font-size: 50px;
+  color: #fff;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+main #visual .visual_slider .panel li .text_box p {
+  font-size: 25px;
+  color: #fff;
+}
+
+main #visual .visual_slider .panel li:after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+main #visual .visual_slider .panel .con1:after {
+  background-image: url(../img/main/visual01.jpg);
+}
+
+main #visual .visual_slider .panel .con2:after {
+  background-image: url(../img/main/visual02.jpg);
+}
+
+main #visual .visual_slider .panel .con3:after {
+  background-image: url(../img/main/visual03.jpg);
+}
+
+main #visual .swiper-pagination {
+  z-index: 5;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: auto;
+  width: auto;
+}
+
+main #visual .swiper-pagination:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+main #visual .swiper-pagination span {
+  float: left;
+  display: block;
+  border-radius: 0;
+  background: #fff;
+  margin: 0;
+  height: 100px;
+  width: 200px;
+  opacity: 1;
+  color: #111;
+  font-size: 20px;
+  transition: 1s;
+  padding: 25px;
+  box-sizing: border-box;
+  font-weight: 700;
+}
+
+main #visual .swiper-pagination .swiper-pagination-bullet-active {
+  background: #ee7b34;
+  color: #fff;
+}
+
+main #visual .tab_list {
+  z-index: 5;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #fff;
+}
+
+main #visual .tab_list:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+main #visual .tab_list li {
+  float: left;
+  height: 100px;
+  width: 200px;
 }
 
 main #new ul {
@@ -2585,13 +2590,17 @@ main #new ul.on li:nth-of-type(3) {
 
 main #about {
   position: relative;
-  padding: 80px 0;
 }
 
 main #about::after {
   content: '';
   display: block;
   clear: both;
+}
+
+main #about .inner {
+  position: relative;
+  height: 460px;
 }
 
 main #about .text_con {
@@ -2694,7 +2703,7 @@ main #Sustainability h2 {
   position: relative;
 }
 
-main #Sustainability .repair_con {
+main #Sustainability .Sustainability_con {
   position: absolute;
   bottom: -80px;
   left: 50%;
@@ -2702,13 +2711,13 @@ main #Sustainability .repair_con {
   max-width: 1000px;
 }
 
-main #Sustainability .repair_con::after {
+main #Sustainability .Sustainability_con::after {
   content: '';
   display: block;
   clear: both;
 }
 
-main #Sustainability .repair_con .r_con {
+main #Sustainability .Sustainability_con .s_con {
   position: relative;
   overflow: hidden;
   width: 50%;
@@ -2719,24 +2728,24 @@ main #Sustainability .repair_con .r_con {
   border-bottom: 3px solid #8d8dd9;
 }
 
-main #Sustainability .repair_con .r_con .repair_slider {
+main #Sustainability .Sustainability_con .s_con .Sustainability_slider {
   height: 100%;
 }
 
-main #Sustainability .repair_con .r_con .repair_slider ul li {
+main #Sustainability .Sustainability_con .s_con .Sustainability_slider ul li {
   text-align: center;
   padding: 50px 70px;
   box-sizing: border-box;
   height: 100%;
 }
 
-main #Sustainability .repair_con .r_con .repair_slider ul li h3 {
+main #Sustainability .Sustainability_con .s_con .Sustainability_slider ul li h3 {
   font-size: 30px;
   text-align: center;
   padding-bottom: 50px;
 }
 
-main #Sustainability .repair_con .r_con .repair_slider .repair-pagination {
+main #Sustainability .Sustainability_con .s_con .Sustainability_slider .Sus-pagination {
   position: absolute;
   bottom: 10px;
   left: 50%;
@@ -2745,11 +2754,11 @@ main #Sustainability .repair_con .r_con .repair_slider .repair-pagination {
   z-index: 10;
 }
 
-main #Sustainability .repair_con .r_con .repair_slider .repair-pagination .swiper-pagination-bullet-active {
+main #Sustainability .Sustainability_con .s_con .Sustainability_slider .Sus-pagination .swiper-pagination-bullet-active {
   background: #ee7b34;
 }
 
-main #Sustainability .repair_con .r_con .repair_slider .repair-prev {
+main #Sustainability .Sustainability_con .s_con .Sustainability_slider .Sus-prev {
   position: absolute;
   left: 20px;
   top: 50%;
@@ -2761,7 +2770,7 @@ main #Sustainability .repair_con .r_con .repair_slider .repair-prev {
   background: #fff;
 }
 
-main #Sustainability .repair_con .r_con .repair_slider .repair-prev::after {
+main #Sustainability .Sustainability_con .s_con .Sustainability_slider .Sus-prev::after {
   content: '';
   display: block;
   position: absolute;
@@ -2772,7 +2781,7 @@ main #Sustainability .repair_con .r_con .repair_slider .repair-prev::after {
   transform: rotate(45deg);
 }
 
-main #Sustainability .repair_con .r_con .repair_slider .repair-prev i {
+main #Sustainability .Sustainability_con .s_con .Sustainability_slider .Sus-prev i {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -2780,7 +2789,7 @@ main #Sustainability .repair_con .r_con .repair_slider .repair-prev i {
   z-index: 10;
 }
 
-main #Sustainability .repair_con .r_con .repair_slider .repair-next {
+main #Sustainability .Sustainability_con .s_con .Sustainability_slider .Sus-next {
   position: absolute;
   right: 20px;
   top: 50%;
@@ -2792,7 +2801,7 @@ main #Sustainability .repair_con .r_con .repair_slider .repair-next {
   background: #fff;
 }
 
-main #Sustainability .repair_con .r_con .repair_slider .repair-next::after {
+main #Sustainability .Sustainability_con .s_con .Sustainability_slider .Sus-next::after {
   content: '';
   display: block;
   position: absolute;
@@ -2803,7 +2812,7 @@ main #Sustainability .repair_con .r_con .repair_slider .repair-next::after {
   transform: rotate(45deg);
 }
 
-main #Sustainability .repair_con .r_con .repair_slider .repair-next i {
+main #Sustainability .Sustainability_con .s_con .Sustainability_slider .Sus-next i {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -2811,18 +2820,18 @@ main #Sustainability .repair_con .r_con .repair_slider .repair-next i {
   z-index: 10;
 }
 
-main #Sustainability .repair_con .r_con .text_box {
+main #Sustainability .Sustainability_con .s_con .text_box {
   padding: 50px 70px;
   box-sizing: border-box;
 }
 
-main #Sustainability .repair_con .r_con .text_box h3 {
+main #Sustainability .Sustainability_con .s_con .text_box h3 {
   font-size: 30px;
   text-align: center;
   padding-bottom: 50px;
 }
 
-main #Sustainability .repair_con .r_con .text_box p {
+main #Sustainability .Sustainability_con .s_con .text_box p {
   text-align: center;
   border: 1px solid #f4f4f4;
   border-bottom: 2px solid #8d8dd9;
@@ -2832,7 +2841,7 @@ main #Sustainability .repair_con .r_con .text_box p {
   margin: 0 auto;
 }
 
-main #Sustainability .repair_con .r_con .text_box a {
+main #Sustainability .Sustainability_con .s_con .text_box a {
   margin-top: 20px;
   text-align: center;
   display: block;
@@ -2842,22 +2851,21 @@ main #Sustainability .repair_con .r_con .text_box a {
   border: 1px solid #f4f4f4;
 }
 
-main #Sustainability .repair_con .r_con .text_box a i {
+main #Sustainability .Sustainability_con .s_con .text_box a i {
   margin-left: 5px;
 }
 
-/*journal ---------------------------------------------------*/
-#journal {
-  margin-top: 80px;
+main #journal ul {
+  margin: 0 -10px;
 }
 
-#journal ul::after {
+main #journal ul::after {
   content: '';
   display: block;
   clear: both;
 }
 
-#journal ul li {
+main #journal ul li {
   float: left;
   width: calc(25% - 20px);
   margin: 0 10px 40px;
@@ -2865,84 +2873,88 @@ main #Sustainability .repair_con .r_con .text_box a i {
   border-bottom: 1px solid #111;
 }
 
-#journal ul li .pic {
+main #journal ul li .pic {
   height: 300px;
 }
 
-#journal ul li .text_box {
+main #journal ul li .text_box {
   margin-top: 30px;
 }
 
-#journal ul li .text_box p {
+main #journal ul li .text_box p {
   margin-top: 10px;
 }
 
-#bake {
-  background: #e5dede;
+main #bake {
+  background: #f4e1ce;
 }
 
-#bake .inner::after {
+main #bake .inner::after {
   content: '';
   display: block;
   clear: both;
 }
 
-#bake .inner > div {
+main #bake .inner > div {
   width: 50%;
 }
 
-#bake .inner > div h3 {
+main #bake .inner > div h3 {
   font-size: 20px;
   margin-bottom: 20px;
 }
 
-#bake .inner > div p {
+main #bake .inner > div p {
   font-size: 16px;
   color: #aaa;
 }
 
-#bake .inner .left p {
+main #bake .inner .left p {
   line-height: 1.5;
 }
 
-#bake .inner .left ul {
+main #bake .inner .left ul {
   margin-top: 50px;
 }
 
-#bake .inner .left ul li {
+main #bake .inner .left ul li {
   margin-bottom: 10px;
   font-size: 16px;
   font-weight: 700;
 }
 
-#bake .inner .right p {
+main #bake .inner .right p {
   margin-top: 10px;
 }
 
-#bake .inner .icon_list {
+main #bake .inner .right iframe {
+  width: 100%;
+}
+
+main #bake .inner .icon_list {
   float: left;
   width: 100%;
   margin-top: 70px;
 }
 
-#bake .inner .icon_list ul {
+main #bake .inner .icon_list ul {
   margin: 0 -10px;
 }
 
-#bake .inner .icon_list ul:after {
+main #bake .inner .icon_list ul:after {
   content: '';
   display: block;
   clear: both;
 }
 
-#bake .inner .icon_list ul li {
+main #bake .inner .icon_list ul li {
   position: relative;
   float: left;
   width: calc(25% - 20px);
   margin: 0 10px;
 }
 
-#bake .inner .icon_list ul li i {
+main #bake .inner .icon_list ul li i {
   display: block;
   width: 64px;
   height: 64px;
@@ -2950,21 +2962,250 @@ main #Sustainability .repair_con .r_con .text_box a i {
   left: 0;
   top: 50%;
   transform: translateY(-50%);
+  font-size: 3em;
 }
 
-#bake .inner .icon_list ul li .text_box {
+main #bake .inner .icon_list ul li .text_box {
   padding-left: 80px;
 }
 
-#bake .inner .icon_list ul li .text_box h3 {
+main #bake .inner .icon_list ul li .text_box h3 {
   margin-bottom: 10px;
 }
 
-#sns .inner {
+main #repair .inner {
   position: relative;
 }
 
-#sns .inner h3 {
+main #repair .inner::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40%;
+  height: 700px;
+  background: #f4e1ce;
+}
+
+main #repair .inner .top_box {
+  position: relative;
+  height: 500px;
+  z-index: 3;
+}
+
+main #repair .inner .top_box .mask01 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 400px;
+  background: url(../img/main/repair.jpg) no-repeat center/cover;
+}
+
+main #repair .inner .top_box .mask02 {
+  position: absolute;
+  right: 5%;
+  top: 10%;
+  width: 55%;
+  height: 500px;
+  background: url(../img/main/repair02.jpg) no-repeat center/cover;
+}
+
+main #repair .inner .top_box .text_box {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+  background: #f4f4f4;
+  width: 500px;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+main #repair .inner .top_box .text_box h3 {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+main #repair .inner .top_box .text_box p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+main #repair .inner .top_box .text_box a {
+  margin-top: 30px;
+  padding: 10px 0;
+  display: block;
+  text-align: center;
+  background: #ee7b34;
+  color: #fff;
+}
+
+main #repair .inner .bottom_box {
+  padding-bottom: 30px;
+  position: relative;
+  z-index: 2;
+  margin-top: 150px;
+}
+
+main #repair .inner .bottom_box::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+main #repair .inner .bottom_box h3 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  float: right;
+}
+
+main #repair .inner .bottom_box ul {
+  float: right;
+  width: 100%;
+  margin: 0 -10px;
+}
+
+main #repair .inner .bottom_box ul::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+main #repair .inner .bottom_box ul li {
+  text-align: center;
+  float: left;
+  width: calc(33.3333% - 20px);
+  margin: 0 10px;
+}
+
+main #repair .inner .bottom_box ul li .pic {
+  height: 300px;
+}
+
+main #repair .inner .bottom_box ul li p {
+  margin-top: 20px;
+}
+
+main #island h2 {
+  max-width: 1180px;
+  margin: 0 auto 50px;
+  position: relative;
+}
+
+main #island .inner {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  max-width: 100%;
+  background: url(../img/island01.jpg) no-repeat center/cover;
+  background-attachment: fixed;
+}
+
+main #island .inner .island_box {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ee7b34;
+  padding: 50px;
+  text-align: center;
+}
+
+main #island .inner .island_box h3 {
+  color: #fff;
+}
+
+main #island .inner .island_box p {
+  color: #fff;
+}
+
+main #island .inner .island_con {
+  position: absolute;
+  left: 50%;
+  bottom: 20%;
+  transform: translate(-50%, 0);
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.5);
+  width: 40%;
+  height: 40%;
+}
+
+main #island .inner .island_con .title {
+  position: absolute;
+  color: #fff;
+  font-size: 40px;
+  left: 50%;
+  bottom: 10px;
+  transform: translate(-50%, -50%);
+  font-family: 'Josefin Sans', 'sans-serif';
+  width: 100%;
+  text-align: center;
+}
+
+main #island .inner .island_con .island_slider {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+main #island .inner .island_con .island_slider ul li {
+  color: #fff;
+  padding: 100px 50px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+main #island .inner .island_con .island_slider ul li h3 {
+  font-size: 30px;
+}
+
+main #island .inner .island_con .island_slider ul li p {
+  margin-top: 20px;
+}
+
+main #island .inner .island_con .island-prev {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+main #island .inner .island_con .island-prev i {
+  color: #fff;
+}
+
+main #island .inner .island_con .island-next {
+  position: absolute;
+  right: -50px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+main #island .inner .island_con .island-next i {
+  color: #fff;
+}
+
+main #sns .inner {
+  position: relative;
+}
+
+main #sns .inner h3 {
   position: absolute;
   top: calc(50% + 40px);
   left: 50%;
@@ -2975,7 +3216,7 @@ main #Sustainability .repair_con .r_con .text_box a i {
   font-family: 'Josefin Sans', 'sans-serif';
 }
 
-#sns .inner h3 a {
+main #sns .inner h3 a {
   display: block;
   padding: 40px 10px;
   box-sizing: border-box;
@@ -2983,35 +3224,86 @@ main #Sustainability .repair_con .r_con .text_box a i {
   color: #fff;
 }
 
-#sns .inner ul {
+main #sns .inner ul {
   margin: 0 -10px;
 }
 
-#sns .inner ul::after {
+main #sns .inner ul::after {
   content: '';
   display: block;
   clear: both;
 }
 
-#sns .inner ul li {
+main #sns .inner ul li {
   float: left;
   width: calc(25% - 20px);
   margin: 0 10px 20px;
 }
 
-#sns .inner ul li .pic {
+main #sns .inner ul li .pic {
   height: 250px;
+}
+
+/*scroll_list ---------------------------------------------------*/
+.scroll_list {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 11;
+  background: #fff;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.scroll_list li {
+  position: relative;
+  width: 10px;
+  height: 50px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.scroll_list li:last-child {
+  margin-bottom: 0;
+}
+
+.scroll_list li span {
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  opacity: 0;
+}
+
+.scroll_list li:hover span {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  color: #fff;
+}
+
+.scroll_list li.on {
+  background: #ff6200;
+}
+
+.scroll_list li.on span {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  color: #fff;
 }
 
 /*footer ---------------------------------------*/
 #footer {
   width: 100%;
-  padding: 100px 0;
+  padding: 50px 0;
   background: #444;
 }
 
 #footer .inner {
-  width: 1180px;
+  max-width: 1180px;
   margin: 0 auto;
 }
 
@@ -3064,20 +3356,86 @@ main #Sustainability .repair_con .r_con .text_box a i {
   /*header --------------------------------------------*/
   #header .inner {
     width: 100%;
-    height: 100px;
+    height: 80px;
   }
   #header .inner > h1 {
-    left: 30px;
+    left: 0;
+  }
+  #header .inner > h1 a {
+    font-size: 25px;
   }
   #header .inner .menuWeb {
     display: none;
   }
   #header .inner .btnCall {
     display: block;
+    z-index: 10;
+  }
+  main section {
+    padding: 50px 30px;
+  }
+  main #new ul {
+    margin: 0;
+  }
+  main #new ul li {
+    width: 33.3333%;
+    margin: 0;
+  }
+  main #about .inner {
+    height: 500px;
+  }
+  main #about .inner .text_con {
+    height: 400px;
+  }
+  main #about .inner .btn {
+    left: 30px;
+    bottom: 0;
+  }
+  main #Sustainability .inner {
+    height: 500px;
+  }
+  main #bake .inner > div {
+    padding: 0 20px;
+  }
+  main #bake .inner .left ul {
+    margin-top: 20px;
+  }
+  main #bake .inner .icon_list {
+    margin-top: 30px;
+  }
+  main #island .inner {
+    height: 700px;
+  }
+  main #island .inner .island_box {
+    padding: 20px;
+  }
+  main #island .inner .island_con {
+    height: 50%;
+    width: 80%;
+  }
+  main #island .inner .island_con .title {
+    font-size: 30px;
+  }
+  main #island .inner .island_con .island_slider ul li h3 {
+    font-size: 25px;
+  }
+  main #island .inner .island_con .island-prev {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+  }
+  main #island .inner .island_con .island-next {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    right: -30px;
+  }
+  .scroll_list {
+    display: none;
   }
   /*footer ---------------------------------------*/
   #footer {
-    padding: 80px 30px;
+    padding: 40px 30px;
   }
   #footer .inner {
     width: 100%;
@@ -3085,7 +3443,199 @@ main #Sustainability .repair_con .r_con .text_box a i {
 }
 
 /*mobile ------------------------------------*/
-@media screen and (max-width: 539px) {
+@media screen and (max-width: 900px) {
+  main section {
+    padding: 40px 15px;
+  }
+  main section > h2,
+  main section .inner > h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  main #visual .visual_slider .panel li .text_box {
+    width: 80%;
+    left: 50%;
+    top: 20%;
+  }
+  main #visual .visual_slider .panel li .text_box span {
+    font-size: 14px;
+  }
+  main #visual .visual_slider .panel li .text_box h2 {
+    font-size: 35px;
+    line-height: 1.5;
+  }
+  main #visual .visual_slider .panel li .text_box p {
+    font-size: 20px;
+  }
+  main #visual .swiper-pagination {
+    width: 100%;
+  }
+  main #visual .swiper-pagination span {
+    width: 33.3333%;
+    height: 50px;
+    font-size: 14px;
+    padding: 15px 0;
+  }
+  main #about .inner {
+    height: auto;
+  }
+  main #about .inner .btn {
+    bottom: auto;
+    top: 60px;
+    right: 30px;
+    left: auto;
+  }
+  main #about .inner .btn li {
+    width: 30px;
+    height: 30px;
+    float: left;
+  }
+  main #about .inner .btn li:nth-of-type(2) {
+    margin-left: 0;
+  }
+  main #about .inner .btn li a i {
+    font-size: 14px;
+    line-height: 30px;
+  }
+  main #about .inner .text_con {
+    width: 100%;
+    height: auto;
+  }
+  main #about .inner .text_con .text_list {
+    position: relative;
+  }
+  main #about .inner .text_con .text_list li .text_box h3 {
+    font-size: 20px;
+  }
+  main #about .inner .text_con .text_list li .text_box p {
+    font-size: 16px;
+  }
+  main #about .inner .text_con .text_list li .text_box p strong {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  main #Sustainability .inner .Sustainability_con {
+    bottom: auto;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+  main #Sustainability .inner .Sustainability_con .s_con {
+    float: none;
+    width: 100%;
+    height: 200px;
+  }
+  main #Sustainability .inner .Sustainability_con .s_con .Sustainability_slider ul li {
+    padding: 15px;
+  }
+  main #Sustainability .inner .Sustainability_con .s_con .Sustainability_slider .Sus-next,
+  main #Sustainability .inner .Sustainability_con .s_con .Sustainability_slider .Sus-prev {
+    top: 30px;
+    width: 30px;
+    height: 30px;
+  }
+  main #Sustainability .inner .Sustainability_con .s_con .Sustainability_slider .Sus-next::after,
+  main #Sustainability .inner .Sustainability_con .s_con .Sustainability_slider .Sus-prev::after {
+    width: 30px;
+    height: 30px;
+  }
+  main #Sustainability .inner .Sustainability_con .s_con .text_box {
+    padding: 15px;
+  }
+  main #Sustainability .inner .Sustainability_con .s_con .text_box h3 {
+    padding-bottom: 20px;
+  }
+  main #journal ul li {
+    width: calc(50% - 20px);
+    margin: 0 10px 20px;
+    padding-bottom: 10px;
+  }
+  main #journal ul li .text_box {
+    margin-top: 10px;
+  }
+  main #journal ul li .text_box p {
+    margin-top: 10px;
+  }
+  main #bake .inner > div {
+    width: 100%;
+    padding: 0 20px;
+    float: none;
+  }
+  main #bake .inner .left ul {
+    margin-top: 20px;
+  }
+  main #bake .inner .right {
+    margin-top: 30px;
+  }
+  main #bake .inner .icon_list {
+    margin-top: 30px;
+  }
+  main #bake .inner .icon_list ul li {
+    width: calc( 50% - 20px);
+    margin-bottom: 10px;
+  }
+  main #bake .inner .icon_list ul li i {
+    font-size: 2em;
+  }
+  main #bake .inner .icon_list ul li .text_box {
+    padding-left: 40px;
+  }
+  main #repair .inner::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 700px;
+    background: #f4e1ce;
+  }
+  main #repair .inner .top_box {
+    position: relative;
+    height: 500px;
+    z-index: 3;
+  }
+  main #repair .inner .top_box .mask01 {
+    width: 100%;
+  }
+  main #repair .inner .top_box .mask02 {
+    display: none;
+  }
+  main #repair .inner .top_box .text_box {
+    width: 80%;
+  }
+  main #repair .inner .top_box .text_box h3 {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+  main #repair .inner .bottom_box {
+    margin-top: 20px;
+  }
+  main #sns .inner h3 {
+    position: absolute;
+    top: 0;
+    width: 150px;
+    right: 0;
+    line-height: 1.5;
+    transform: none;
+    left: auto;
+  }
+  main #sns .inner h3 a {
+    padding: 20px 10px;
+  }
+  main #sns .inner ul {
+    margin: 0;
+  }
+  main #sns .inner ul li {
+    float: left;
+    width: 100%;
+    margin: 0 0 20px;
+  }
+  main #sns .inner ul li .pic {
+    height: 250px;
+  }
   /*footer ---------------------------------------*/
   #footer .inner ul {
     margin-top: 20px;
@@ -3093,5 +3643,78 @@ main #Sustainability .repair_con .r_con .text_box a i {
   }
   #footer .inner ul li {
     margin: 0 10px 0 0;
+  }
+}
+
+@media screen and (max-width: 539px) {
+  main #visual .visual_slider .panel li .text_box h2 {
+    line-height: 1.2;
+  }
+  main #visual .swiper-pagination {
+    width: 100%;
+  }
+  main #visual .swiper-pagination span {
+    padding: 10px 0;
+  }
+  main #new ul li {
+    width: 100%;
+    float: none;
+  }
+  main #new ul li .pic {
+    height: 350px;
+  }
+  main #new ul li .text_box {
+    bottom: 0;
+    padding: 10px;
+  }
+  main #repair .inner::after {
+    height: 100%;
+  }
+  main #repair .inner .top_box .text_box {
+    width: 90%;
+    padding: 15px;
+  }
+  main #repair .inner .top_box .text_box h3 {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+  main #repair .inner .bottom_box {
+    margin-top: 20px;
+  }
+  main #repair .inner .bottom_box ul {
+    margin: 0;
+  }
+  main #repair .inner .bottom_box ul li {
+    margin: 0 0 30px;
+    width: 100%;
+  }
+  main #journal ul li {
+    float: none;
+    width: 100%;
+    margin: 0 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #111;
+  }
+  main #journal ul li .pic {
+    height: 300px;
+  }
+  main #island .inner {
+    height: 400px;
+  }
+  main #island .inner .island_box {
+    padding: 20px;
+  }
+  main #island .inner .island_con {
+    height: 60%;
+    width: 90%;
+  }
+  main #island .inner .island_con .title {
+    font-size: 30px;
+  }
+  main #island .inner .island_con .island_slider ul li {
+    padding: 20px;
+  }
+  main #island .inner .island_con .island_slider ul li h3 {
+    font-size: 25px;
   }
 }
