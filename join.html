@@ -8,7 +8,7 @@
   <title>Join</title>
   <script src="https://kit.fontawesome.com/16312fa746.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/main.js" defer></script>
+  <script src="js/join.js" defer></script>
 </head>
 
 <body>
@@ -85,7 +85,7 @@
         </div>
         <div class="right">
           <h1>Join Us</h1>
-          <form action="result.html" method="get">
+          <form action="result.html" method="post" id="form">
             <fieldset>
               <legend class="h">회원가입양식폼</legend>
               <table>
@@ -93,20 +93,18 @@
                 <tr scope="row">
                   <th><label for="id">USER ID</label></th>
                   <td>
-                    <input type="text" name="id" id="id" placeholder="아이디를 입력해 주세요" required>
+                    <input type="text" name="userid" id="id" placeholder="아이디를 입력해 주세요" >
                   </td>
                 </tr>
                 <tr>
                   <th scope="row"><label for="pwd1">PASSWORD</label></th>
                   <td>
-                    <input type="password" name="pwd1" id="pwd1" placeholder="비밀번호를 입력해 주세요" required>
+                    <input type="password" name="pwd1" id="pwd1" placeholder="비밀번호를 입력해 주세요" >
                   </td>
                 </tr>
-
                 <tr>
                   <th scope="row">HOBBY</th>
                   <td>
-                    <p class="hobbyTxt">취미를 하나 이상 선택해 주세요.
                     </p>
                     <div class="checks">
                       <input type="checkbox" name="hobby" id="game" value="game">
@@ -127,13 +125,9 @@
                 <tr>
                   <th scope="row">GENDER</th>
                   <td>
-                    <p class="genderTxt">
-                      성별을 선택해 주세요.
-                    </p>
                     <div class="radio">
                       <input type="radio" name="gender" id="male" value="male">
                       <label for="male">MALE</label>
-
                     </div>
                     <div class="radio">
                       <input type="radio" name="gender" id="female" value="female">

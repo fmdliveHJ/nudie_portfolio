@@ -38,7 +38,6 @@
       margin-top: 50px;
       background: #fff;
       display: block;
-      
       width: 200px;
       margin: 50px auto 0;
    
@@ -47,11 +46,8 @@
       padding: 20px;
       display: block;
       width:100%;height:100%;
-    
     }
-
   }
-
   .join_list {
     padding: 50px 30px 50px;
     text-align: center;
@@ -173,7 +169,6 @@
 
         h1 {
           margin-bottom: 30px;
-
           &::after {
             width: 30px;
           }
@@ -181,7 +176,6 @@
 
         table {
           width: 100%;
-
           th {
             display: block;
             width: 100%;
@@ -215,9 +209,11 @@
                 background: $bgColor;
               }
             }
+            
           }
 
           td {
+            position: relative;
             display: block;
             width: 100%;
             border-bottom: 1px solid #bbb;
@@ -236,27 +232,24 @@
             label {
               margin-right: 10px;
             }
-
             .radio,
             .checks {
               display: inline-block;
             }
-
-            .hobbyTxt,
-            .genderTxt {
-              font: 12px/1 'Quicksand';
-              color: hotpink;
-              margin-bottom: 5px;
-              display: none;
+            p {
+              position: absolute;
+              font-size: 12px;
+              color:$pointColor;
+              bottom:-20px;
             }
-
+            input[type=password] + p {
+              bottom:-30px;
+            }
           }
         }
       }
-
     }
   }
-
   .text_box {
     padding: 50px 0 50px;
     background: #f4e1ce;
