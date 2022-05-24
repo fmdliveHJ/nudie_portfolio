@@ -99,7 +99,7 @@
 				display: block;
 				width: 100%;
 				height: 2px;
-				background: #fff;
+				background: #111;
 				position: absolute;
 				top: 0;
 				left: 0;
@@ -111,7 +111,7 @@
 				display: block;
 				width: 100%;
 				height: 2px;
-				background: #fff;
+				background: #111;
 				position: absolute;
 				bottom: 0;
 				left: 0;
@@ -122,7 +122,7 @@
 				display: block;
 				width: 100%;
 				height: 2px;
-				background: #fff;
+				background: #111;
 				position: absolute;
 				top: 50%;
 				margin-top: -1px;
@@ -307,22 +307,15 @@
 		.inner {
 			width: 100%;
 			height: 100px;
-
-			> h1 {
-				left: 30px;
-			}
-
 			.menuWeb {
 				display: none;
 			}
-
 			// 햄버거버튼
 			.btnCall {
 				display: block;
 			}
 		}
 	}
-
     /*sub layout content tablet --------------------------*/
     .content{  
         .sub_visual{            

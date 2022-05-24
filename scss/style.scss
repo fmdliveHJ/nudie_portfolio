@@ -10,6 +10,8 @@ $bgColor02: #f4f4f4;
 $bgColor03 :#8d8dd9;
 $bgColor04 :#f4e1ce;
 
+$fontJose : 'Josefin Sans', sans-serif;
+
 
 
 @mixin title($fontSize: 24px, $color: #555, $mb: 50px) {
@@ -28,6 +30,7 @@ $bgColor04 :#f4e1ce;
 @import 'join.scss';
 @import 'about.scss';
 @import 'location.scss';
+@import 'media.scss';
 /*header --------------------------------------------*/
 #header {
 	position: fixed;

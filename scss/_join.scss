@@ -412,14 +412,12 @@
                 border: 1px solid #fff;
               }
             }
-
             td {
               display: block;
               width: 100%;
               border-bottom: 1px solid #bbb;
               padding: 10px 0;
-              margin-bottom: 20px;
-
+              margin-bottom: 40px;
               input[type=text],
               input[type=password],
               select {
@@ -428,7 +426,6 @@
                 border: none;
                 padding: 5px;
               }
-
               label {
                 margin-right: 0;
                 color: #fff

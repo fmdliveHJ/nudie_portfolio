@@ -5,7 +5,6 @@ btnCall.onclick = (e) => {
   btnCall.classList.toggle('on');
   menuMo.classList.toggle('on');
 }
-
 const main = document.querySelectorAll('main');
 const btns = document.querySelectorAll('.tab_list li');
 const boxs = document.querySelectorAll('.panel li');
@@ -13,7 +12,6 @@ btns.forEach((el, index) => {
   el.addEventListener('click', (e) => {
     e.preventDefault();
     let isOn = e.currentTarget.classList.contains('on')
-    //만약 활성화 되어 있다면 아래코드 실행안하고 이벤트문 종료
     if (isOn) return;
     activation(btns, index)
     activation(boxs, index)
@@ -21,7 +19,6 @@ btns.forEach((el, index) => {
 })
 
 function activation(arr, index) {
-  //클릭한 버튼에 on이 있어서 이미 활성화 되어 있는지 isOn에 저장
   for (const btn of arr) {
     btn.classList.remove('on');
   }
@@ -97,13 +94,10 @@ const header = document.querySelector('header');
 
 window.addEventListener('scroll', (e) => {
   let value = window.scrollY;
-  // console.log('scroll', value);
   if (value > 700) {
     newArrival.classList.add('on');
-
   } else {
     newArrival.classList.remove('on');
-
   }
   if (value > 120) {
     header.classList.add('on');
@@ -123,32 +117,19 @@ let posArr = null;
 let enableClick02 = true;
 let base = -400;
 
-//console.log(lis_arr); 
-
-//브라우저 로딩시 섹션 세로위치값 구하기 
 setPos();
-
-
 
 window.addEventListener("resize", () => {
   setPos();
-  //resize시 버튼과 섹션 매칭이 안되는 문제 
-  //현재 활성화 버튼의 순번구하기 
-  //브라우저를 활성화섹션의 위치로 고정해서 이동 
   const active = ul.querySelector("li.on");
   const active_index = lis_arr.indexOf(active);
-  //console.log(active_index); 
   window.scroll(0, posArr[active_index]);
-
 })
-
 
 lis.forEach((li, index) => {
   li.addEventListener("click", e => {
-  
     let isOn = e.currentTarget.classList.contains("on");
     if (isOn) return;
-
     if (enableClick02) {
       enableClick02 = false;
       moveScroll(index);
@@ -156,18 +137,14 @@ lis.forEach((li, index) => {
   })
 })
 
-//브라우저 스크롤시 현재의 스코롤 거리값 출력 
 window.addEventListener("scroll", e => {
   ativation02();
 })
-
 function setPos() {
   posArr = [];
-  //각섹션 세로위치값 구해서 저장 
   for (let section of sections) {
     posArr.push(section.offsetTop)
   }
-  //console.log(posArr)
 }
 
 function moveScroll(index) {
@@ -184,15 +161,10 @@ function moveScroll(index) {
 function ativation02() {
   let scroll = window.scrollY || window.pageYOffset;
   sections.forEach((el, index) => {
-    //스크롤값이 각 섹션의 세로 위치값보다 크거나 같다면 
     if (scroll >= posArr[index] + base) {
-      //모든 버튼을 비활성화하고  
       for (const el of lis) el.classList.remove("on");
-      //해당 순번의 li만 활성화 
       lis[index].classList.add("on");
-      //모든 섹션의 on을 제거하고 
       for (const section of sections) section.classList.remove("on");
-      //해당 순번의 section만 활성화 
       sections[index].classList.add("on");
     }
   })
@@ -203,7 +175,7 @@ function ativation02() {
 let menu = ['Bake Your Own', 'Every pair of Nudie Jeans', 'Island Life']
 let swiper = new Swiper(".visual_slider", {
   autoplay: {
-    delay: 3000,
+    delay: 5000,
     disableOnInteraction: false,
   },
   speed: 1000,
