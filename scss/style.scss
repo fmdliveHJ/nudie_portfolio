@@ -5,7 +5,7 @@ $tablet: 1179px;
 $mini: 900px;
 $mobile: 539px;
 $pointColor : #ff6200;
-$bgColor : #ee7b34;
+$bgColor : #d97a3f;
 $bgColor02: #f4f4f4;
 $bgColor03 :#8d8dd9;
 $bgColor04 :#f4e1ce;
@@ -31,6 +31,7 @@ $fontJose : 'Josefin Sans', sans-serif;
 @import 'about.scss';
 @import 'location.scss';
 @import 'media.scss';
+@import 'gallery.scss';
 /*header --------------------------------------------*/
 #header {
 	position: fixed;

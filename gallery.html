@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery</title>
-    <script src="https://kit.fontawesome.com/16312fa746.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/main.js" defer></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery</title>
+  <script src="https://kit.fontawesome.com/16312fa746.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+  <script src="js/gallery.js" defer></script>
 </head>
+
 <body>
   <header id="header_sub">
     <div class="inner">
@@ -46,31 +49,126 @@
   </header>
   <!-- header -->
 
-    <section class="content">
-        <div class="sub_visual"></div>
-        <div class="inner">
-            <h1>GALLERY <span>이미지 갤러리</span></h1>
-            <!--컨텐츠 들어가는 부분 -->
+  <section class="content gallery">
+    <div class="visual">
+      <div class="text_con">
+        <div class="text_box">
+          <h2>Lorem, ipsum dolor.</h2>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid tempora nam inventore nesciunt, sequi
+            porro obcaecati sed accusamus rerum voluptas!</p>
         </div>
-    </section>
-
-    <footer id="footer_sub">
-        <div class="inner">
-            <h1>DCODELAB</h1>
-            <ul>
-                <li><a href="#">Policy</a></li>
-                <li><a href="#">Terms</a></li>
-                <li><a href="#">Customer</a></li>
-                <li><a href="#">Contact us</a></li>
-            </ul>
-
-            <address>
-                address:DCODELAB, 60, Sajik-ro 8-gil, Jongro-gu, Seoul, Republic of Lorea(Post Code 03172) <br/>
-                TEL: +82-2-2100-2114 FAX:+82-2-2100-7999
-            </address>
-
-            <p>Copyright &copy; 2022 DCODELAB ALL Right reserved.</p>
+        <i></i>
+      </div>
+    </div>
+    <!--// visual -->
+    <div class="title_gallery">
+      <div class="inner">
+        <div class="con">
+          <div class="left">
+            <div class="img">
+              <img src="./img/big/1.jpg" alt="">
+            </div>
+            <i></i>
+          </div>
+          <div class="right">
+            <div class="text_box">
+              <h2>Lorem, ipsum.</h2>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis possimus ea aliquid doloremque
+                veritatis reiciendis ipsum sequi, minus consequuntur? Voluptatum fugiat laborum dolore nisi nihil. Culpa
+                veritatis fugiat dolorum possimus.</p>
+              <span>Lorem, ipsum dolor.</span>
+            </div>
+          </div>
         </div>
-    </footer>
+        <div class="con">
+          <div class="left">
+            <div class="text_box">
+              <h2>Lorem, ipsum.</h2>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis possimus ea aliquid doloremque
+                veritatis reiciendis ipsum sequi, minus consequuntur? Voluptatum fugiat laborum dolore nisi nihil. Culpa
+                veritatis fugiat dolorum possimus.</p>
+              <span>Lorem, ipsum dolor.</span>
+            </div>
+          </div>
+          <div class="right">
+            <div class="img">
+              <img src="./img/big/1.jpg" alt="">
+            </div>
+            <i></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--// title_gallery -->
+
+    <div class="box_bg ">
+      <div class="text_box">
+        <p>Nudie Jeans</p>
+        <p>Gallery</p>
+      </div>
+    </div>
+    <!--// box_bg  -->
+
+    <div class="gallery_con">
+      <div class="inner">
+        <article id="searchBox">
+          <input type="text" placeholder="검색어 입력" id="search">
+          <button class="btnSearch"><i class="fas fa-search"></i></button>
+          <div class="loading">
+            <div class="cloud">
+              <p>Loading...</p>
+              <div class="rain">
+                <span style="--i:11"></span>
+                <span style="--i:12"></span>
+                <span style="--i:14"></span>
+                <span style="--i:15"></span>
+                <span style="--i:10"></span>
+                <span style="--i:12"></span>
+                <span style="--i:13"></span>
+                <span style="--i:17"></span>
+                <span style="--i:18"></span>
+                <span style="--i:12"></span>
+                <span style="--i:19"></span>
+                <span style="--i:16"></span>
+                <span style="--i:15"></span>
+                <span style="--i:14"></span>
+                <span style="--i:15"></span>
+                <span style="--i:10"></span>
+                <span style="--i:12"></span>
+                <span style="--i:13"></span>
+                <span style="--i:17"></span>
+              </div>
+            </div>
+          </div>
+        </article>
+        <ul class="list"></ul>
+      </div>
+    </div>
+    <!--//gallery_con -->
+  </section>
+
+  <footer id="footer_sub">
+    <div class="inner">
+      <h1>Nudie Jeans</h1>
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Media</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="#">Location</a></li>
+      </ul>
+      <address>
+        Nudie Jeans Marketing AB
+        Västra Hamngatan 6
+        SE-411 17 Göteborg
+        Sweden <br />
+        Phone: +46 10 1515600
+        Fax: +46 10 15 15 699
+      </address>
+      <p>© 2022 Nudie Jeans Co. All rights reserved. <br>
+        Privacy, Cookie Policy & Cookie Settings</p>
+    </div>
+  </footer>
 </body>
+
 </html>
