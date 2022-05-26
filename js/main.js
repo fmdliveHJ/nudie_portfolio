@@ -1,10 +1,17 @@
 const btnCall = document.querySelector(".btnCall");
+const close = document.querySelector(".close");
 const menuMo = document.querySelector('.menuMo');
 btnCall.onclick = (e) => {
   e.preventDefault();
-  btnCall.classList.toggle('on');
-  menuMo.classList.toggle('on');
+  menuMo.classList.add('on');
 }
+close.onclick = (e) => {
+  e.preventDefault();
+  menuMo.classList.remove('on');
+
+}
+
+
 const main = document.querySelectorAll('main');
 const btns = document.querySelectorAll('.tab_list li');
 const boxs = document.querySelectorAll('.panel li');
@@ -16,7 +23,7 @@ btns.forEach((el, index) => {
     activation(btns, index)
     activation(boxs, index)
   })
-})
+}) 
 
 function activation(arr, index) {
   for (const btn of arr) {
@@ -88,18 +95,34 @@ function init(frame) {
   })
 }
 
-//new
-let newArrival = document.querySelector('#new ul');
+//scroll motion
 const header = document.querySelector('header');
 
 window.addEventListener('scroll', (e) => {
-  let value = window.scrollY;
-  if (value > 700) {
+  let scrollY = this.scrollY;
+  let newArrival = document.querySelector('#new ul');
+  let newTop = newArrival.getBoundingClientRect().top;
+  let Sustainability = document.querySelector('#Sustainability .inner');
+  let susTop = Sustainability.getBoundingClientRect().top;
+  const base = 400
+
+  console.log(Sustainability);
+  console.log(susTop)
+
+  if (scrollY > newTop) {
     newArrival.classList.add('on');
   } else {
     newArrival.classList.remove('on');
   }
-  if (value > 120) {
+  
+  if (scrollY > susTop + base) {
+    Sustainability.classList.add('on');
+  } else {
+    Sustainability.classList.remove('on');
+  }
+
+  //header
+  if (scrollY > 0) {
     header.classList.add('on');
   } else {
     header.classList.remove('on');
@@ -115,7 +138,7 @@ const lis_arr = Array.from(lis);
 const len = sections.length;
 let posArr = null;
 let enableClick02 = true;
-let base = -400;
+let base = -300;
 
 setPos();
 
@@ -211,3 +234,46 @@ let island_swiper = new Swiper(".island_slider", {
     prevEl: '.island-prev',
   },
 });
+
+const skipNavi = document.querySelectorAll("#skipNavi li a"); 
+
+for(let el of skipNavi){
+    el.addEventListener("focusin", e=>{
+        el.classList.add("on"); 
+    });
+
+    el.addEventListener("focusout", e=>{
+        el.classList.remove("on"); 
+    })
+}
+
+//cookie
+const popup = document.querySelector('#popup');
+const btnClose = document.querySelector('.close_btn');
+const isCookie = document.cookie.indexOf('today=done');
+
+
+if(isCookie == -1){
+  console.log('쿠키없음')
+  popup.style.display = 'block';
+} else {
+  console.log('쿠키 있음')
+  popup.style.display = 'none';
+}
+
+btnClose.addEventListener('click', e=>{
+  e.preventDefault();
+  let isChecked = popup.querySelector('input[type=checkbox]').checked;
+  if(isChecked){
+    setCookie('today', 'done', 1);
+  }
+  popup.style.display ='none';
+})
+ function setCookie(cookieName, cookieValue, time){
+     const today = new Date(); 
+     const date = today.getDate(); 
+     today.setDate(date+ time); 
+     const duedate = today.toGMTString(); 
+     document.cookie=`t${cookieName}=${cookieValue}; path="/"; expires=${duedate}`;  
+ 
+ }

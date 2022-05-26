@@ -4,38 +4,20 @@ const input = document.querySelector("#search");
 const btnSearch = document.querySelector(".btnSearch"); 
 const key = "ac2a0a14b2c15e96b9b417eabf3b2694";
 const base = "https://www.flickr.com/services/rest/?";
+const photoGet = "flickr.people.getPublicPhotos";
 const method_interest = "flickr.interestingness.getList"; 
 const method_search = "flickr.photos.search";
 const per_page = 50; 
-const url = `${base}method=${method_interest}&api_key=${key}&per_page=${per_page}&format=json&nojsoncallback=1`; 
+
 
 /*
 //이름으로 찾기 */
-const method3 = "flickr.people.getPhotos"; 
+const method = "flickr.people.getPhotos"; 
 const username = "195728709@N06";
-const url3 = `${base}method=${method3}&api_key=${key}&per_page=${per_page}&format=json&nojsoncallback=1&privacy_filter=1&user_id=${username}`; 
-callData(url3); 
+const url = `${base}method=${method}&api_key=${key}&per_page=${per_page}&format=json&nojsoncallback=1&privacy_filter=1&user_id=${username}`; 
+callData(url); 
 
 
-/*
-//좋아요 사진 찾기 
-const method4 = "flickr.favorites.getList"; 
-const username = "187597869@N08";
-const url4 = `${base}method=${method4}&api_key=${key}&per_page=${per_page}&format=json&nojsoncallback=1&privacy_filter=1&user_id=${username}`; 
-callData(url4);
-*/
-/*
-//갤러리 사진 찾기 
-const username = "187597869@N08";
-const gallery ="72157714129891218"; 
-const method5 = "flickr.galleries.getPhotos";
-const url5 = `${base}method=${method5}&api_key=${key}&per_page=${per_page}&format=json&nojsoncallback=1&privacy_filter=1&user_id=${username}&gallery_id=${gallery}`;
-callData(url5)
-*/
-
-
-
-//callData(url); 
 
 //검색 버튼 클릭시 callData호출 
 btnSearch.addEventListener("click", e=>{
@@ -48,7 +30,7 @@ btnSearch.addEventListener("click", e=>{
         const errMsgs = input.parentElement.querySelectorAll("p"); 
         if(errMsgs.length >0) errMsgs[0].remove(); 
 
-        const url = `${base}method=${method_search}&api_key=${key}&per_page=${per_page}&format=json&nojsoncallback=1&privacy_filter=1&tags=${tag}`;
+        const url = `${base}method=${method_search}&api_key=${key}&user_id=${username}&user_id=${user_id}&per_page=${per_page}&format=json&nojsoncallback=1&privacy_filter=1&tags=${tag}`;
     
         callData(url);
 
@@ -79,7 +61,7 @@ input.addEventListener("keyup", e=>{
             const errMsgs = input.parentElement.querySelectorAll("p"); 
             if(errMsgs.length >0) errMsgs[0].remove(); 
 
-            const url = `${base}method=${method_search}&api_key=${key}&per_page=${per_page}&format=json&nojsoncallback=1&privacy_filter=1&tags=${tag}`;
+            const url = `${base}method=${method_search}&api_key=${key}&user_id=${username}&per_page=${per_page}&format=json&nojsoncallback=1&privacy_filter=1&tags=${tag}`;
         
             callData(url);           
 

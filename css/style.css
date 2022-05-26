@@ -6,7 +6,9 @@
   box-sizing: border-box;
 }
 
-ul, ol, li {
+ul,
+ol,
+li {
   list-style: none;
 }
 
@@ -160,6 +162,16 @@ input[type=email]:focus {
   background: url(../img/ico/ico_chk.png) no-repeat center;
   background-size: 9px 7px;
   background-color: #ff6200;
+}
+
+.mask_bg {
+  position: absolute;
+  opacity: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #ff6200;
 }
 
 /*sub layout ----------------------------------------------*/
@@ -3373,6 +3385,24 @@ aside.pop span {
   cursor: pointer;
 }
 
+#skipNavi li a {
+  display: block;
+  width: 100%;
+  height: 40px;
+  background: #d97a3f;
+  font: bold 15px/40px '맑은 고딕';
+  color: #fff;
+  text-align: center;
+  position: fixed;
+  top: -40px;
+  left: 0;
+  z-index: 10;
+}
+
+#skipNavi li a.on {
+  top: 0;
+}
+
 /*header --------------------------------------------*/
 #header {
   position: fixed;
@@ -3402,7 +3432,7 @@ aside.pop span {
 
 #header .inner > h1 {
   position: absolute;
-  left: 30px;
+  left: 0;
   top: 50%;
   transform: translateY(-50%);
   letter-spacing: 5px;
@@ -3467,6 +3497,7 @@ aside.pop span {
   width: 20px;
   height: 20px;
   display: none;
+  z-index: 11;
 }
 
 #header .inner .btnCall::before {
@@ -3506,41 +3537,24 @@ aside.pop span {
   transition: 0.5s;
 }
 
-#header .inner .btnCall.on::before {
-  top: 50%;
-  margin-top: -1px;
-  transform: rotate(45deg);
-}
-
-#header .inner .btnCall.on::after {
-  bottom: 50%;
-  margin-bottom: -1px;
-  transform: rotate(-45deg);
-}
-
-#header .inner .btnCall.on span {
-  transform: translateX(100%);
-  opacity: 0;
-}
-
 #header .inner .menuMo {
-  width: 270px;
+  width: 100%;
   height: 100vh;
-  background: #333;
+  background: #d97a3f;
   padding: 35px 30px;
   position: fixed;
   top: 0;
-  left: -270px;
+  right: -100%;
   z-index: 10;
   transition: 0.5s;
 }
 
 #header .inner .menuMo.on {
-  left: 0;
+  right: 0;
 }
 
 #header .inner .menuMo h1 {
-  border-bottom: 1px solid #666;
+  border-bottom: 1px solid #fff;
   padding-bottom: 30px;
 }
 
@@ -3559,10 +3573,65 @@ aside.pop span {
 #header .inner .menuMo ul li a {
   display: block;
   padding: 20px 0;
-  border-bottom: 1px solid #444;
+  border-bottom: 1px solid #fff;
   font: bold 14px/1 "Quicksand";
-  color: #888;
+  color: #fff;
   text-align: center;
+}
+
+#header .inner .menuMo .close {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  width: 20px;
+  height: 20px;
+  z-index: 11;
+  color: #fff;
+}
+
+#header .inner .menuMo .close::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: top 0.5s, transform 0.5s 0.5s;
+  top: 50%;
+  margin-top: -1px;
+  transform: rotate(45deg);
+}
+
+#header .inner .menuMo .close::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: bottom 0.5s, transform 0.5s 0.5s;
+  bottom: 50%;
+  margin-bottom: -1px;
+  transform: rotate(-45deg);
+}
+
+#header .inner .menuMo .close span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  margin-top: -1px;
+  left: 0;
+  text-indent: -9999px;
+  transition: 0.5s;
+  transform: translateX(100%);
+  opacity: 0;
 }
 
 /*main ---------------------------------------------------*/
@@ -3643,11 +3712,16 @@ main #visual .visual_slider .panel li .text_box {
 }
 
 main #visual .visual_slider .panel li .text_box span {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
   font-size: 18px;
   color: #fff;
 }
 
 main #visual .visual_slider .panel li .text_box h2 {
+  position: relative;
+  overflow: hidden;
   margin: 50px 0;
   font-size: 50px;
   color: #fff;
@@ -3655,6 +3729,8 @@ main #visual .visual_slider .panel li .text_box h2 {
 }
 
 main #visual .visual_slider .panel li .text_box p {
+  position: relative;
+  overflow: hidden;
   font-size: 25px;
   color: #fff;
 }
@@ -3681,6 +3757,16 @@ main #visual .visual_slider .panel .con2:after {
 
 main #visual .visual_slider .panel .con3:after {
   background-image: url(../img/main/visual03.jpg);
+}
+
+main #visual .visual_slider .panel .swiper-slide-next .text_box i,
+main #visual .visual_slider .panel .swiper-slide-prev .text_box i {
+  opacity: 0;
+}
+
+main #visual .visual_slider .panel .swiper-slide-active .text_box i {
+  opacity: 1;
+  animation: aniLeft both cubic-bezier(0.68, 0, 0.265, 1) 1.2s 0.2s;
 }
 
 main #visual .swiper-pagination {
@@ -3766,6 +3852,8 @@ main #new ul li a {
 }
 
 main #new ul li .pic {
+  position: relative;
+  overflow: hidden;
   height: 500px;
   width: 100%;
 }
@@ -3813,6 +3901,11 @@ main #new ul li:nth-of-type(3) {
   top: 150px;
 }
 
+main #new ul.on li .pic i {
+  animation: aniBottom both cubic-bezier(0.68, 0, 0.265, 1) 1.2s 0.2s;
+  opacity: 1;
+}
+
 main #new ul.on li:nth-of-type(1) {
   top: 0;
 }
@@ -3846,6 +3939,9 @@ main #about .text_con {
   width: 70%;
   float: right;
   overflow: hidden;
+  transition: 1s;
+  opacity: 0;
+  transform: translateX(20%);
 }
 
 main #about .text_con .text_list {
@@ -3886,6 +3982,9 @@ main #about .btn {
   position: absolute;
   left: 0;
   bottom: 80px;
+  opacity: 1;
+  transition: 1s linear;
+  transform: translateX(-50%);
 }
 
 main #about .btn::after {
@@ -3926,12 +4025,28 @@ main #about .btn li:nth-of-type(2) a i {
   color: #fff;
 }
 
+main #about.on .text_con, main #about.on .btn {
+  transform: translateX(0);
+  opacity: 1;
+}
+
 main #Sustainability .inner {
   position: relative;
   max-width: 100%;
   width: 100%;
-  height: 800px;
+  height: 50px;
+  opacity: 0;
+  transition: 1s;
   background: url(../img/main/repair.jpg) no-repeat center/cover;
+}
+
+main #Sustainability .inner.on {
+  height: 800px;
+  opacity: 1;
+}
+
+main #Sustainability .inner.on .Sustainability_con {
+  opacity: 1;
 }
 
 main #Sustainability h2 {
@@ -3941,11 +4056,13 @@ main #Sustainability h2 {
 }
 
 main #Sustainability .Sustainability_con {
+  opacity: 0;
   position: absolute;
   bottom: -80px;
   left: 50%;
   transform: translateX(-50%);
   max-width: 1000px;
+  transition: 1s;
 }
 
 main #Sustainability .Sustainability_con::after {
@@ -4058,7 +4175,7 @@ main #Sustainability .Sustainability_con .s_con .Sustainability_slider .Sus-next
 }
 
 main #Sustainability .Sustainability_con .s_con .text_box {
-  padding: 50px 70px;
+  padding: 50px 20px;
   box-sizing: border-box;
 }
 
@@ -4112,6 +4229,8 @@ main #journal ul li {
 
 main #journal ul li .pic {
   height: 300px;
+  position: relative;
+  overflow: hidden;
 }
 
 main #journal ul li .text_box {
@@ -4120,6 +4239,11 @@ main #journal ul li .text_box {
 
 main #journal ul li .text_box p {
   margin-top: 10px;
+}
+
+main #journal.on ul li .pic i {
+  animation: aniBottom both cubic-bezier(0.68, 0, 0.265, 1) 1.2s 0.2s;
+  opacity: 1;
 }
 
 main #bake {
@@ -4218,11 +4342,12 @@ main #repair .inner::after {
   content: '';
   display: block;
   position: absolute;
-  bottom: 0;
+  top: 40%;
   right: 0;
   width: 40%;
-  height: 700px;
+  height: 0;
   background: #f4e1ce;
+  transition: 1s;
 }
 
 main #repair .inner .top_box {
@@ -4234,30 +4359,35 @@ main #repair .inner .top_box {
 main #repair .inner .top_box .mask01 {
   position: absolute;
   left: 0;
+  transform: translateX(-50px);
   top: 0;
   width: 50%;
   height: 400px;
   background: url(../img/main/repair.jpg) no-repeat center/cover;
+  transition: 1s;
 }
 
 main #repair .inner .top_box .mask02 {
   position: absolute;
   right: 5%;
+  transform: translateX(50px);
   top: 10%;
   width: 55%;
   height: 500px;
   background: url(../img/main/repair02.jpg) no-repeat center/cover;
+  transition: 1s;
 }
 
 main #repair .inner .top_box .text_box {
   position: absolute;
   left: 50%;
   top: 60%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -30%);
   background: #f4f4f4;
   width: 500px;
   padding: 30px;
   box-sizing: border-box;
+  transition: 1s;
 }
 
 main #repair .inner .top_box .text_box h3 {
@@ -4283,6 +4413,7 @@ main #repair .inner .bottom_box {
   padding-bottom: 30px;
   position: relative;
   z-index: 2;
+  margin: 0 -10px;
   margin-top: 150px;
 }
 
@@ -4301,7 +4432,6 @@ main #repair .inner .bottom_box h3 {
 main #repair .inner .bottom_box ul {
   float: right;
   width: 100%;
-  margin: 0 -10px;
 }
 
 main #repair .inner .bottom_box ul::after {
@@ -4323,6 +4453,19 @@ main #repair .inner .bottom_box ul li .pic {
 
 main #repair .inner .bottom_box ul li p {
   margin-top: 20px;
+}
+
+main #repair.on .inner::after {
+  height: 700px;
+}
+
+main #repair.on .inner .top_box .mask01,
+main #repair.on .inner .top_box .mask02 {
+  transform: translateX(0);
+}
+
+main #repair.on .inner .top_box .text_box {
+  transform: translate(-50%, -50%);
 }
 
 main #island h2 {
@@ -4532,6 +4675,74 @@ main #sns .inner ul li .pic {
   color: #fff;
 }
 
+/*popup*/
+#popup {
+  display: none;
+  width: 500px;
+  height: 500px;
+  border: 3px solid #ff6200;
+  background: #111;
+  position: fixed;
+  top: 100px;
+  left: 100px;
+  z-index: 100;
+}
+
+#popup .cont {
+  width: 100%;
+  min-height: 150px;
+  font-size: 30px;
+}
+
+#popup .cont .pic {
+  width: 100%;
+  height: 300px;
+}
+
+#popup .cont .pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#popup .cont .text_box {
+  padding: 30px 20px;
+  text-align: center;
+}
+
+#popup .cont .text_box h2 {
+  color: #fff;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+#popup .cont .text_box p {
+  margin-top: 20px;
+  font-family: "Josefin Sans", sans-serif;
+  color: #fff;
+}
+
+#popup .wrap {
+  position: absolute;
+  bottom: 10px;
+}
+
+#popup .wrap label {
+  margin-left: 10px;
+  font: 12px/1;
+  color: #fff;
+}
+
+#popup .close_btn {
+  position: absolute;
+  top: -3px;
+  right: -54px;
+  font-size: 14px;
+  background: #d97a3f;
+  color: #fff;
+  font-weight: 700;
+  padding: 10px;
+}
+
 /*footer ---------------------------------------*/
 #footer {
   width: 100%;
@@ -4586,6 +4797,45 @@ main #sns .inner ul li .pic {
   width: 100%;
   font: 12px/1 "Quicksand";
   color: #777;
+}
+
+@keyframes opa {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  51% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes aniLeft {
+  0% {
+    transform: translateX(-101%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(101%);
+  }
+}
+
+@keyframes aniBottom {
+  0% {
+    transform: translateY(101%);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-101%);
+  }
 }
 
 /*tablet -------------------------------------*/
@@ -4721,6 +4971,7 @@ main #sns .inner ul li .pic {
     top: 60px;
     right: 30px;
     left: auto;
+    transform: none;
   }
   main #about .inner .btn li {
     width: 30px;
@@ -4737,6 +4988,8 @@ main #sns .inner ul li .pic {
   main #about .inner .text_con {
     width: 100%;
     height: auto;
+    opacity: 1;
+    transform: none;
   }
   main #about .inner .text_con .text_list {
     position: relative;
@@ -4836,9 +5089,11 @@ main #sns .inner ul li .pic {
   }
   main #repair .inner .top_box .mask01 {
     width: 100%;
+    transform: none;
   }
   main #repair .inner .top_box .mask02 {
     display: none;
+    transform: none;
   }
   main #repair .inner .top_box .text_box {
     width: 80%;
@@ -4872,6 +5127,17 @@ main #sns .inner ul li .pic {
   }
   main #sns .inner ul li .pic {
     height: 250px;
+  }
+  #popup {
+    max-width: 500px;
+    width: 80%;
+  }
+  #popup .cont .pic {
+    height: 200px;
+  }
+  #popup .cont .text_box {
+    padding: 30px 20px;
+    text-align: center;
   }
   /*footer ---------------------------------------*/
   #footer .inner ul {
@@ -4953,5 +5219,8 @@ main #sns .inner ul li .pic {
   }
   main #island .inner .island_con .island_slider ul li h3 {
     font-size: 25px;
+  }
+  #popup {
+    display: none !important;
   }
 }
