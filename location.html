@@ -7,8 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Location</title>
   <script src="https://kit.fontawesome.com/16312fa746.js" crossorigin="anonymous"></script>
+  <!-- css -->
   <link rel="stylesheet" href="css/style.css">
+  <!-- js -->
   <script src="js/anime.js" defer></script>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=81a4a2e5cc83248f021533735820e8e6"></script>
   <script src="js/location.js" defer></script>
 </head>
 
@@ -57,15 +60,22 @@
             <img src="./img/location/visual03.jpg" alt="">
           </div>
         </div>
-        <div class="location">
+        <div class="maps">
           <div class="left">
+            <div class="text_box">
             <h2>Location</h2>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Numquam ipsam facere est eius adipisci sequi minima quos ad temporibus impedit, tempore perspiciatis,
               labore delectus neque amet autem? Quasi, officia fugit!</p>
+            </div>
           </div>
           <div class="right">
-            loaction
+            <div id="map"></div>
+            <ul class="map_list">
+              <li class="on"><a href="#">Lotte Nudie</a></li>
+              <li><a href="#">Goyang Nudie</a></li>
+              <li><a href="#">Suwon Nudie</a></li>
+            </ul>
           </div>
         </div>
       </div>
@@ -73,11 +83,12 @@
 
     <div class="banner_con">
       <div class="text_box">
-      <h2>Contact</h2>
-      <p>
-       Lorem ipsum dolor sit amet consectetur, adipisicing elit. <br> Eaque quibusdam itaque cumque, ipsa velit iure ducimus quo earum quam rem.
-      </p>
-    </div>
+        <h2>Contact</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. <br> Eaque quibusdam itaque cumque, ipsa velit iure
+          ducimus quo earum quam rem.
+        </p>
+      </div>
       <div class="banner">
         <div class="banner_list">
           <ul class="list"></ul>

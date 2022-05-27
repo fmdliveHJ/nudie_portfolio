@@ -2173,12 +2173,14 @@ input[type=email]:focus {
 
 .location {
   position: relative;
+  transition: 0.5s;
 }
 
 .location .inner .visual .mask {
   width: 100%;
   height: 500px;
   position: relative;
+  transition: 0.5s;
 }
 
 .location .inner .visual .mask .pic {
@@ -2189,6 +2191,7 @@ input[type=email]:focus {
   transform: translateY(-50%);
   z-index: 2;
   border: 2px solid #111;
+  transition: 0.5s;
 }
 
 .location .inner .visual .mask .pic img {
@@ -2207,34 +2210,74 @@ input[type=email]:focus {
   filter: blur(5px);
 }
 
-.location .inner .location {
+.location .inner .visual .maps {
   position: relative;
   margin-top: 50px;
   margin-bottom: 80px;
+  transition: 0.5s;
 }
 
-.location .inner .location::after {
+.location .inner .visual .maps::after {
   content: '';
   display: block;
   clear: both;
 }
 
-.location .inner .location .left {
-  width: 50%;
+.location .inner .visual .maps .left {
+  width: 40%;
 }
 
-.location .inner .location .left h2 {
+.location .inner .visual .maps .left .text_box {
+  transition: 0.5s;
+}
+
+.location .inner .visual .maps .left .text_box h2 {
   font-size: 30px;
   margin-bottom: 30px;
 }
 
-.location .inner .location .right {
+.location .inner .visual .maps .right {
   position: absolute;
-  right: 100px;
+  right: 50px;
   bottom: 0;
-  width: 40%;
+  width: 50%;
   height: 400px;
-  background: #f4f4f4;
+  transition: 0.5s;
+}
+
+.location .inner .visual .maps .right #map {
+  width: 100%;
+  height: 100%;
+}
+
+.location .inner .visual .maps .right .map_list {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.location .inner .visual .maps .right .map_list::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.location .inner .visual .maps .right .map_list li {
+  float: left;
+  width: 33.3333%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.location .inner .visual .maps .right .map_list li a {
+  display: block;
+  color: #111;
+  font-weight: 700;
+  transition: 0.5s;
+}
+
+.location .inner .visual .maps .right .map_list li.on a {
+  background: #d97a3f;
+  color: #fff;
 }
 
 .location .banner_con {
@@ -2261,6 +2304,7 @@ input[type=email]:focus {
 }
 
 .location .banner {
+  overflow: hidden;
   width: 100%;
   position: relative;
   background: rgba(0, 0, 0, 0.8);
@@ -2356,6 +2400,7 @@ aside .pic {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  border: 3px solid #ff6200;
 }
 
 aside .pic img {
@@ -2371,6 +2416,168 @@ aside span {
   font: bold 12px/1 'arial';
   color: #fff;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1179px) {
+  .location .inner .visual .mask .pic {
+    left: 30px;
+  }
+  .location .inner .visual .maps .left {
+    width: 50%;
+    position: absolute;
+    top: -400px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+  }
+  .location .inner .visual .maps .right {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+  }
+  .location .inner .visual .maps .right #map {
+    width: 100%;
+    height: 100%;
+  }
+  .location .inner .visual .maps .right #map .map_list::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  .location .inner .visual .maps .right #map .map_list li {
+    float: left;
+    width: 33.3333%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+  }
+  .location .inner .visual .maps .right #map .map_list li a {
+    display: block;
+    color: #111;
+    font-weight: 700;
+    transition: 0.5s;
+  }
+  .location .inner .visual .maps .right #map .map_list li.on a {
+    background: #d97a3f;
+    color: #fff;
+  }
+  .location .banner_con .text_box {
+    padding: 0 30px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .location .inner .visual .mask {
+    display: none;
+  }
+  .location .inner .visual .maps .left {
+    width: 100%;
+    position: relative;
+    top: auto;
+    right: 0;
+    float: none;
+    z-index: 2;
+    padding: 20px;
+    height: 300px;
+    background: none;
+  }
+  .location .inner .visual .maps .left .text_box {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+  }
+  .location .inner .visual .maps .left .text_box h2 {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+  }
+  .location .inner .visual .maps .left .text_box p {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+  }
+  .location .inner .visual .maps .left::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(../img/location/visual02.jpg) no-repeat bottom/cover;
+    filter: blur(5px);
+  }
+  .location .inner .visual .maps .right {
+    height: 300px;
+    position: relative;
+    float: none;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+  }
+  .location .inner .visual .maps .right #map {
+    width: 100%;
+    height: 100%;
+  }
+  .location .inner .visual .maps .right .map_list li a {
+    display: block;
+    color: #111;
+    font-weight: 700;
+    transition: 0.5s;
+    font-size: 12px;
+  }
+  .location .inner .visual .maps .right .map_list li.on a {
+    background: #d97a3f;
+    color: #fff;
+  }
+  .banner_con .text_box {
+    padding: 0 30px;
+  }
+}
+
+@media screen and (max-width: 539px) {
+  .location .inner .visual .mask {
+    display: none;
+  }
+  .location .inner .visual .maps .left {
+    width: 100%;
+    position: relative;
+    top: auto;
+    right: 0;
+    float: none;
+    z-index: 2;
+    padding: 0;
+    margin-bottom: 20px;
+    background: none;
+  }
+  .location .inner .visual .maps .right {
+    height: 300px;
+    position: relative;
+    float: none;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+  }
+  .location .inner .visual .maps .right #map {
+    width: 100%;
+    height: 100%;
+  }
+  .location .inner .visual .maps .right .map_list li a {
+    display: block;
+    color: #111;
+    font-weight: 700;
+    transition: 0.5s;
+    font-size: 12px;
+  }
+  .location .inner .visual .maps .right .map_list li.on a {
+    background: #d97a3f;
+    color: #fff;
+  }
+  .location .banner_con .text_box {
+    padding: 0 30px;
+  }
 }
 
 .media {

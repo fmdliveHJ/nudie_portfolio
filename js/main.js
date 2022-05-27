@@ -212,16 +212,16 @@ let swiper = new Swiper(".visual_slider", {
   },
 });
 // Sustainability
-let repair_swiper = new Swiper(".repair_slider", {
+let repair_swiper = new Swiper(".Sustainability_slider", {
   speed: 1000,
   loop: true,
   pagination: {
-    el: '.repair-pagination',
+    el: '.Sus-pagination',
     clickable: true,
   },
   navigation: {
-    nextEl: '.repair-next',
-    prevEl: '.repair-prev',
+    nextEl: '.Sus-next',
+    prevEl: '.Sus-prev',
   },
 });
 // island
