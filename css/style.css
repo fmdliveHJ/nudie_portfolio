@@ -3869,6 +3869,9 @@ aside.pop span {
     background: #fff;
     padding: 20px;
   }
+  .gallery .title_gallery .con > div .t_bg {
+    height: 10%;
+  }
   .gallery .title_gallery .con:last-child {
     margin-top: 180px;
   }
