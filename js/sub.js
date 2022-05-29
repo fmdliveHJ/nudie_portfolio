@@ -10,3 +10,4 @@ close.onclick = (e) => {
   menuMo.classList.remove('on');
 
 }
+
