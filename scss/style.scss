@@ -423,7 +423,6 @@ main {
 				}
 			}
 		}
-
 		.swiper-pagination {
 			z-index: 5;
 			position: absolute;
@@ -461,33 +460,12 @@ main {
 				color:#fff;
 			}
 		}
-
-		.tab_list {
-			z-index: 5;
-			position: absolute;
-			bottom: 0;
-			right: 0;
-			background: #fff;
-
-			&:after {
-				content: '';
-				display: block;
-				clear: both;
-			}
-
-			li {
-				float: left;
-				height: 100px;
-				width: 200px;
-			}
-		}
 	}
 
 	/*new ---------------------------------------------------*/
 	#new {
 		ul {
 			margin: 0 -20px;
-
 			&:after {
 				content: '';
 				display: block;

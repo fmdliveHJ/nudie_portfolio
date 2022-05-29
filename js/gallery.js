@@ -17,8 +17,6 @@ const username = "195728709@N06";
 const url = `${base}method=${method}&api_key=${key}&per_page=${per_page}&format=json&nojsoncallback=1&privacy_filter=1&user_id=${username}`; 
 callData(url); 
 
-
-
 //검색 버튼 클릭시 callData호출 
 btnSearch.addEventListener("click", e=>{
     let tag = input.value.trim(); 
@@ -30,7 +28,7 @@ btnSearch.addEventListener("click", e=>{
         const errMsgs = input.parentElement.querySelectorAll("p"); 
         if(errMsgs.length >0) errMsgs[0].remove(); 
 
-        const url = `${base}method=${method_search}&api_key=${key}&user_id=${username}&user_id=${user_id}&per_page=${per_page}&format=json&nojsoncallback=1&privacy_filter=1&tags=${tag}`;
+        const url = `${base}method=${method_search}&api_key=${key}&user_id=${username}&per_page=${per_page}&format=json&nojsoncallback=1&privacy_filter=1&tags=${tag}`;
     
         callData(url);
 
@@ -44,7 +42,7 @@ btnSearch.addEventListener("click", e=>{
         if(errMsgs.length >0) errMsgs[0].remove(); 
 
         const errMsg = document.createElement("p"); 
-        errMsg.append("검색어를 입력하세요"); 
+        errMsg.append("Enter search terms"); 
         input.parentElement.append(errMsg); 
     }   
 });
@@ -67,7 +65,7 @@ input.addEventListener("keyup", e=>{
 
         //입력한 검색어가 없을 경우 경고문구 생성
         }else{
-            frame.innerHTML = ""; 
+            frame.innerHTML = "No search results found"; 
             frame.style.height = "auto"; 
 
             const errMsgs = input.parentElement.querySelectorAll("p"); 
@@ -142,15 +140,21 @@ function callData(url){
             //이미지로딩완료후 isotope플러그인 적용 ㄴ
             imgLoaded(); 
         }else{
-            console.log("검색하신 검색어의 이미지가 없습니다"); 
+           // console.log("검색하신 검색어의 이미지가 없습니다"); 
 
             const errMsg = document.createElement("p"); 
-            errMsg.append("검색하신 검색어의 이미지가 없습니다"); 
+            errMsg.append("No search results found"); 
             input.parentElement.append(errMsg); 
 
             frame.classList.remove("on");
             loading.classList.add("off"); 
-            frame.innerHTML =""; 
+            frame.innerHTML =`
+               <li class="no_search"> 
+               <p>
+                No search results foundz
+                </p>
+                </li>
+            `; 
             frame.style.height = "auto"; 
         }
 

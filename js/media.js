@@ -1,9 +1,6 @@
 /*
 키값 :AIzaSyBRM5pMfszFmLafdsii9bicZeVa5yWIeqs
-
 playlist: PLooTX0MOEe6MoofFH0t5afF8357gr7xxm
-
-
 */
 const key = "AIzaSyBRM5pMfszFmLafdsii9bicZeVa5yWIeqs";
 const playlistId = "PLooTX0MOEe6MoofFH0t5afF8357gr7xxm";
@@ -88,37 +85,29 @@ function closePop(e) {
   const visualTop = visual.getBoundingClientRect().top;
   const mediaTop = media.getBoundingClientRect().top;
   const youtubeTop = youtubeCon.getBoundingClientRect().top;
-  const bannerTop = banner.getBoundingClientRect().top + 300;
+  const bannerTop = banner.getBoundingClientRect().top;
+
+  console.log(mediaTop)
 
 function showValue() {
-const base = 300
-let scroll = window.scrollY||window.pageYOffset; 
+let scroll = window.scrollY||window.pageYOffset ; 
 
-  // if(visualTop == scroll){
-  //   visual.classList.add('on')
-  // }
-  // else {
-  //   visual.classList.remove('on')
-  // }
-
-
-
-  if(visualTop < scroll){
+console.log(scroll)
+  if(mediaTop <= scroll){
     media.classList.add('on')
   }
   else {
     media.classList.remove('on')
   }
 
-
-  if(mediaTop < scroll){
+  if(youtubeTop <= scroll){
     youtubeCon.classList.add('on')
   }
   else {
     youtubeCon.classList.remove('on')
   }
 
-  if(bannerTop < scroll){
+  if(bannerTop <= scroll){
     banner.classList.add('on')
   }
   else {
