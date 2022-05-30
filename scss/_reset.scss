@@ -56,6 +56,10 @@ html {
   scroll-behavior: smooth;
 }
 
+.hidden {
+  overflow: hidden;
+}
+
 /*input*/
 input[type=text]:focus,
 input[type=password]:focus,

@@ -10,8 +10,6 @@ close.onclick = (e) => {
   menuMo.classList.remove('on');
 
 }
-
-
 const main = document.querySelectorAll('main');
 const btns = document.querySelectorAll('.tab_list li');
 const boxs = document.querySelectorAll('.panel li');
@@ -106,9 +104,6 @@ window.addEventListener('scroll', (e) => {
   let susTop = Sustainability.getBoundingClientRect().top;
   const base = 400
 
-  console.log(Sustainability);
-  console.log(susTop)
-
   if (scrollY > newTop) {
     newArrival.classList.add('on');
   } else {
@@ -169,7 +164,6 @@ function setPos() {
     posArr.push(section.offsetTop)
   }
 }
-
 function moveScroll(index) {
   new Anime(window, {
     prop: "scroll",
@@ -180,7 +174,6 @@ function moveScroll(index) {
     }
   });
 }
-
 function ativation02() {
   let scroll = window.scrollY || window.pageYOffset;
   sections.forEach((el, index) => {
@@ -192,6 +185,31 @@ function ativation02() {
     }
   })
 }
+ //gsap scroll
+
+ gsap.from('#about', {
+  duration:0.5,
+  y:100,
+
+  scrollTrigger: {
+    trigger : '#about',
+    marker: true,
+    toggleActions:'toggle',
+    scrub: 0.5
+  }
+})
+
+ gsap.from('#sns', {
+  duration:1,
+  y:100,
+  scale:0.5,
+  scrollTrigger: {
+    trigger : '#sns',
+    toggleActions:'toggle',
+    scrub: 0.5
+  }
+})
+
 
 //swiper
 // visual
@@ -277,3 +295,61 @@ btnClose.addEventListener('click', e=>{
      document.cookie=`t${cookieName}=${cookieValue}; path="/"; expires=${duedate}`;  
  
  }
+
+//popup 
+//h1을 클릭했을 때 
+//선그어지는 효과 - 박스 - inner 보이게 처리
+const body = document.querySelector("body"); 
+const repair_open = document.querySelector(".repair_open"); 
+const repairPop = document.querySelector("#repairPopup"); 
+const repair_close = document.querySelector(".repair_close"); 
+const _top = repairPop.querySelector(".top");
+const _right = repairPop.querySelector(".right");
+const _bottom = repairPop.querySelector(".bottom");
+const _left = repairPop.querySelector(".left");
+const _inner =repairPop.querySelector(".inner");
+const repairSpeed = 500; 
+
+repair_open.addEventListener("click", e=>{
+    e.preventDefault(); 
+    body.classList.add('hidden')
+    repair_close.style.display  = "block";
+    repairPop.style.display = "block"; 
+    repairPop.style.zIndex  = 10;
+
+    new Anime(_top,{
+        prop:"width", 
+        value:"100%", 
+        duration : repairSpeed, 
+        callback:()=>{
+          new Anime(_inner,{
+              prop:"opacity", 
+              value:1, 
+              duration : repairSpeed, 
+               
+          })
+      } 
+    })
+}); 
+
+repair_close.addEventListener("click", e=>{
+    e.preventDefault(); 
+    body.classList.remove('hidden')
+    new Anime(_inner,{
+        prop:"opacity", 
+        value:0, 
+        duration:repairSpeed, 
+        callback:()=>{
+            new Anime(_top,{
+                prop:"width", 
+                value:"0%", 
+                duration:repairSpeed,
+                callback:()=>{
+                  repairPop.style.display = "none";
+                   
+                }
+            });
+        }
+
+    })
+})

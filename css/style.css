@@ -58,6 +58,10 @@ html {
   scroll-behavior: smooth;
 }
 
+.hidden {
+  overflow: hidden;
+}
+
 /*input*/
 input[type=text]:focus,
 input[type=password]:focus,
@@ -4377,6 +4381,9 @@ main #new ul li .text_box {
   bottom: -50px;
   left: 50%;
   transform: translateX(-50%);
+  transition: 0.5s;
+  border: 3px solid transparent;
+  box-sizing: border-box;
 }
 
 main #new ul li .text_box h2 {
@@ -4387,6 +4394,12 @@ main #new ul li .text_box h2 {
 main #new ul li .text_box p {
   font-size: 16px;
   margin-bottom: 20px;
+  width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 main #new ul li .text_box span {
@@ -4403,6 +4416,11 @@ main #new ul li:nth-of-type(2) {
 
 main #new ul li:nth-of-type(3) {
   top: 150px;
+}
+
+main #new ul li:hover .text_box {
+  bottom: -10px;
+  border-color: #ff6200;
 }
 
 main #new ul.on li .pic i {
@@ -4444,7 +4462,6 @@ main #about .text_con {
   float: right;
   overflow: hidden;
   transition: 1s;
-  opacity: 0;
   transform: translateX(20%);
 }
 
@@ -4486,7 +4503,6 @@ main #about .btn {
   position: absolute;
   left: 0;
   bottom: 80px;
-  opacity: 1;
   transition: 1s linear;
   transform: translateX(-50%);
 }
@@ -5247,6 +5263,79 @@ main #sns .inner ul li .pic {
   padding: 10px;
 }
 
+#repairPopup {
+  width: 80vw;
+  height: 70vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+#repairPopup .top {
+  width: 0%;
+  height: 5px;
+  background: #ff6200;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+#repairPopup .inner {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  padding: 50px;
+  border: 2px solid #ff6200;
+  overflow: auto;
+}
+
+#repairPopup .inner .pic {
+  width: 100%;
+  height: 100%;
+}
+
+#repairPopup .inner .pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#repairPopup .inner .cont {
+  width: 65%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 20px 0;
+}
+
+#repairPopup .inner .cont h2 {
+  font-size: 30px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+#repairPopup .inner .cont p {
+  font: 16px/1.3 'arial';
+  color: #aaa;
+}
+
+#repairPopup .repair_close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #111;
+  border: 1px solid #ff6200;
+  background: #fff;
+  padding: 5px;
+  font-weight: 700;
+}
+
 /*footer ---------------------------------------*/
 #footer {
   width: 100%;
@@ -5642,6 +5731,9 @@ main #sns .inner ul li .pic {
   #popup .cont .text_box {
     padding: 30px 20px;
     text-align: center;
+  }
+  #repairPopup .inner .cont {
+    width: 100%;
   }
   /*footer ---------------------------------------*/
   #footer .inner ul {
