@@ -1433,7 +1433,7 @@ input[type=email]:focus {
 .join .main {
   height: 500px;
   width: 100%;
-  background: url(../img/big/4.jpg) no-repeat center/cover;
+  background: url(../img/join/visual.jpg) no-repeat center/cover;
   text-align: center;
 }
 
@@ -4515,6 +4515,10 @@ main section {
   padding: 100px 0;
 }
 
+main section.on {
+  opacity: 1;
+}
+
 main section > h2,
 main section .inner > h2 {
   font-size: 3em;
@@ -4664,6 +4668,11 @@ main #visual .swiper-pagination .swiper-pagination-bullet-active {
   color: #fff;
 }
 
+main #new {
+  opacity: 0;
+  transition: 0.5s;
+}
+
 main #new ul {
   margin: 0 -20px;
 }
@@ -4753,20 +4762,24 @@ main #new ul li:hover .text_box {
   border-color: #ff6200;
 }
 
-main #new ul.on li .pic i {
+main #new.on {
+  opacity: 1;
+}
+
+main #new.on ul li .pic i {
   animation: aniBottom both cubic-bezier(0.68, 0, 0.265, 1) 1.2s 0.2s;
   opacity: 1;
 }
 
-main #new ul.on li:nth-of-type(1) {
+main #new.on ul li:nth-of-type(1) {
   top: 0;
 }
 
-main #new ul.on li:nth-of-type(2) {
+main #new.on ul li:nth-of-type(2) {
   top: 0;
 }
 
-main #new ul.on li:nth-of-type(3) {
+main #new.on ul li:nth-of-type(3) {
   top: 0;
 }
 
@@ -4884,19 +4897,9 @@ main #Sustainability .inner {
   position: relative;
   max-width: 100%;
   width: 100%;
-  height: 50px;
-  opacity: 0;
+  height: 800px;
   transition: 1s;
   background: url(../img/main/repair.jpg) no-repeat center/cover;
-}
-
-main #Sustainability .inner.on {
-  height: 800px;
-  opacity: 1;
-}
-
-main #Sustainability .inner.on .Sustainability_con {
-  opacity: 1;
 }
 
 main #Sustainability h2 {
@@ -4905,13 +4908,31 @@ main #Sustainability h2 {
   position: relative;
 }
 
+main #Sustainability .Sustain_box {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #d97a3f;
+  padding: 50px;
+  text-align: center;
+}
+
+main #Sustainability .Sustain_box h3 {
+  color: #fff;
+}
+
+main #Sustainability .Sustain_box p {
+  color: #fff;
+}
+
 main #Sustainability .Sustainability_con {
-  opacity: 0;
   position: absolute;
   bottom: -80px;
   left: 50%;
   transform: translateX(-50%);
   max-width: 1000px;
+  width: 100%;
   transition: 1s;
 }
 
@@ -5339,7 +5360,7 @@ main #island .inner {
   height: 100vh;
   width: 100%;
   max-width: 100%;
-  background: url(../img/island01.jpg) no-repeat center/cover;
+  background: url(../img/main/island01.jpg) no-repeat center/cover;
   background-attachment: fixed;
 }
 
@@ -5806,13 +5827,21 @@ main #sns .inner ul li .pic {
   }
   main #about .inner .text_con {
     height: 400px;
+    transform: none;
   }
   main #about .inner .btn {
     left: 30px;
     bottom: 0;
+    transform: none;
   }
   main #Sustainability .inner {
     height: 500px;
+  }
+  main #Sustainability .inner .Sustain_box {
+    padding: 20px;
+  }
+  main #Sustainability .inner .Sustainability_con {
+    width: 90%;
   }
   main #bake .inner > div {
     padding: 0 20px;

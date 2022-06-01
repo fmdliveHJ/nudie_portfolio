@@ -1,3 +1,4 @@
+//mobile menu
 const btnCall = document.querySelector(".btnCall");
 const close = document.querySelector(".close");
 const menuMo = document.querySelector('.menuMo');
@@ -8,28 +9,9 @@ btnCall.onclick = (e) => {
 close.onclick = (e) => {
   e.preventDefault();
   menuMo.classList.remove('on');
-
-}
-const main = document.querySelectorAll('main');
-const btns = document.querySelectorAll('.tab_list li');
-const boxs = document.querySelectorAll('.panel li');
-btns.forEach((el, index) => {
-  el.addEventListener('click', (e) => {
-    e.preventDefault();
-    let isOn = e.currentTarget.classList.contains('on')
-    if (isOn) return;
-    activation(btns, index)
-    activation(boxs, index)
-  })
-}) 
-
-function activation(arr, index) {
-  for (const btn of arr) {
-    btn.classList.remove('on');
-  }
-  arr[index].classList.add('on');
 }
 
+//about slider
 const slider = document.querySelector('.text_con');
 const prev = document.querySelector('.prev');
 const next = document.querySelector('.next');
@@ -98,32 +80,30 @@ const header = document.querySelector('header');
 
 window.addEventListener('scroll', (e) => {
   let scrollY = this.scrollY;
-  let newArrival = document.querySelector('#new ul');
-  let newTop = newArrival.getBoundingClientRect().top;
-  let Sustainability = document.querySelector('#Sustainability .inner');
-  let susTop = Sustainability.getBoundingClientRect().top;
-  const base = 400
-
-  if (scrollY > newTop) {
-    newArrival.classList.add('on');
-  } else {
-    newArrival.classList.remove('on');
-  }
-  
-  if (scrollY > susTop + base) {
-    Sustainability.classList.add('on');
-  } else {
-    Sustainability.classList.remove('on');
-  }
-
   //header
   if (scrollY > 0) {
     header.classList.add('on');
   } else {
     header.classList.remove('on');
   }
+})
+
+//scroll
+const aboutCon = document.querySelectorAll('section');
+const totalNum = aboutCon.length;
+
+window.addEventListener("scroll", function (e) {
+  const scroll = this.scrollY;
+  for (let i = 0; i < totalNum; i++) {
+    if (scroll > aboutCon[i].offsetTop - window.outerHeight / 3 && scroll < aboutCon[i].offsetTop - window.outerHeight / 3 + aboutCon[i].offsetHeight) {
+      aboutCon[i].classList.add('on');
+    } else {
+      aboutCon[i].classList.remove('on');
+    }
+  }
 
 })
+
 
 //scroll
 const sections = document.querySelectorAll("section");
@@ -202,14 +182,13 @@ function ativation02() {
  gsap.from('#sns', {
   duration:1,
   y:100,
-  scale:0.5,
+  scale:0.8,
   scrollTrigger: {
     trigger : '#sns',
     toggleActions:'toggle',
     scrub: 0.5
   }
 })
-
 
 //swiper
 // visual
@@ -246,20 +225,17 @@ let repair_swiper = new Swiper(".Sustainability_slider", {
 let island_swiper = new Swiper(".island_slider", {
   speed: 1000,
   loop: true,
-
   navigation: {
     nextEl: '.island-next',
     prevEl: '.island-prev',
   },
 });
-
 const skipNavi = document.querySelectorAll("#skipNavi li a"); 
 
 for(let el of skipNavi){
     el.addEventListener("focusin", e=>{
         el.classList.add("on"); 
     });
-
     el.addEventListener("focusout", e=>{
         el.classList.remove("on"); 
     })
@@ -299,57 +275,57 @@ btnClose.addEventListener('click', e=>{
 //popup 
 //h1을 클릭했을 때 
 //선그어지는 효과 - 박스 - inner 보이게 처리
-// const body = document.querySelector("body"); 
-// const repair_open = document.querySelector(".repair_open"); 
-// const repairPop = document.querySelector("#repairPopup"); 
-// const repair_close = document.querySelector(".repair_close"); 
-// const _top = repairPop.querySelector(".top");
-// const _right = repairPop.querySelector(".right");
-// const _bottom = repairPop.querySelector(".bottom");
-// const _left = repairPop.querySelector(".left");
-// const _inner =repairPop.querySelector(".inner");
-// const repairSpeed = 500; 
+const body = document.querySelector("body"); 
+const repair_open = document.querySelector(".repair_open"); 
+const repairPop = document.querySelector("#repairPopup"); 
+const repair_close = document.querySelector(".repair_close"); 
+const _top = repairPop.querySelector(".top");
+const _right = repairPop.querySelector(".right");
+const _bottom = repairPop.querySelector(".bottom");
+const _left = repairPop.querySelector(".left");
+const _inner =repairPop.querySelector(".inner");
+const repairSpeed = 500; 
 
-// repair_open.addEventListener("click", e=>{
-//     e.preventDefault(); 
-//     body.classList.add('hidden')
-//     repair_close.style.display  = "block";
-//     repairPop.style.display = "block"; 
-//     repairPop.style.zIndex  = 10;
+repair_open.addEventListener("click", e=>{
+    e.preventDefault(); 
+    body.classList.add('hidden')
+    repair_close.style.display  = "block";
+    repairPop.style.display = "block"; 
+    repairPop.style.zIndex  = 10;
 
-//     new Anime(_top,{
-//         prop:"width", 
-//         value:"100%", 
-//         duration : repairSpeed, 
-//         callback:()=>{
-//           new Anime(_inner,{
-//               prop:"opacity", 
-//               value:1, 
-//               duration : repairSpeed, 
+    new Anime(_top,{
+        prop:"width", 
+        value:"100%", 
+        duration : repairSpeed, 
+        callback:()=>{
+          new Anime(_inner,{
+              prop:"opacity", 
+              value:1, 
+              duration : repairSpeed, 
                
-//           })
-//       } 
-//     })
-// }); 
+          })
+      } 
+    })
+}); 
 
-// repair_close.addEventListener("click", e=>{
-//     e.preventDefault(); 
-//     body.classList.remove('hidden')
-//     new Anime(_inner,{
-//         prop:"opacity", 
-//         value:0, 
-//         duration:repairSpeed, 
-//         callback:()=>{
-//             new Anime(_top,{
-//                 prop:"width", 
-//                 value:"0%", 
-//                 duration:repairSpeed,
-//                 callback:()=>{
-//                   repairPop.style.display = "none";
+repair_close.addEventListener("click", e=>{
+    e.preventDefault(); 
+    body.classList.remove('hidden')
+    new Anime(_inner,{
+        prop:"opacity", 
+        value:0, 
+        duration:repairSpeed, 
+        callback:()=>{
+            new Anime(_top,{
+                prop:"width", 
+                value:"0%", 
+                duration:repairSpeed,
+                callback:()=>{
+                  repairPop.style.display = "none";
                    
-//                 }
-//             });
-//         }
+                }
+            });
+        }
 
-//     })
-// })
+    })
+})

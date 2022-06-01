@@ -12,8 +12,6 @@ $bgColor04 :#f4e1ce;
 
 $fontJose : 'Josefin Sans', sans-serif;
 
-
-
 @mixin title($fontSize: 24px, $color: #555, $mb: 50px) {
 	font-weight: bold;
 	font-size: $fontSize;
@@ -300,7 +298,9 @@ main {
 
 	section {
 		padding: 100px 0;
-
+		&.on {
+			opacity: 1;
+		}
 	}
 
 	section>h2,
@@ -464,6 +464,8 @@ main {
 
 	/*new ---------------------------------------------------*/
 	#new {
+		opacity: 0;
+		transition: 0.5s;
 		ul {
 			margin: 0 -20px;
 			&:after {
@@ -471,7 +473,6 @@ main {
 				display: block;
 				clear: both;
 			}
-
 			li {
 				float: left;
 				width: calc(33.3333% - 40px);
@@ -550,31 +551,34 @@ main {
 					}
 				}
 			}
-			&.on {
-				li {
-					.pic {
-						i {
-							animation: aniBottom both cubic-bezier(0.680, 0, 0.265, 1) 1.2s 0.2s;
-							opacity: 1;
-						}
-					}
-					&:nth-of-type(1) {
-	
-						top: 0;
-					}
-					&:nth-of-type(2) {
-	
-						top: 0;
-					}
-	
-					&:nth-of-type(3) {
-	
-						top: 0;
+
+
+		}
+		&.on {
+			opacity: 1;
+			ul{
+			li {
+				.pic {
+					i {
+						animation: aniBottom both cubic-bezier(0.680, 0, 0.265, 1) 1.2s 0.2s;
+						opacity: 1;
 					}
 				}
-			
-			}
+				&:nth-of-type(1) {
 
+					top: 0;
+				}
+				&:nth-of-type(2) {
+
+					top: 0;
+				}
+
+				&:nth-of-type(3) {
+
+					top: 0;
+				}
+			}
+		}
 		}
 
 
@@ -599,34 +603,25 @@ main {
 			float: right;
 			overflow: hidden;
 			transition: 1s;
-
 			transform: translateX(20%);
-			
-
 			.text_list {
-
 				position: absolute;
 				top: 0;
-
 				&::after {
 					content: '';
 					display: block;
 					clear: both;
 				}
-
 				li {
 					float: left;
 					transition: 0.5s;
-
 					h3 {
 						font-size: 2em;
 					}
-
 					p {
 						font-size: 20px;
 						line-height: 1.2;
 						margin-top: 30px;
-
 						strong {
 							font-weight: 700;
 							display: block;
@@ -639,7 +634,6 @@ main {
 			}
 
 		}
-
 		.btn {
 			position: absolute;
 			left: 0;
@@ -699,45 +693,43 @@ main {
 			position: relative;
 			max-width: 100%;
 			width: 100%;
-			height: 50px;
-			opacity: 0;
+			height:800px;
 			transition: 1s;
 			background: url(../img/main/repair.jpg) no-repeat center/cover;
-			&.on{
-				height:800px;
-				opacity: 1;
-				.Sustainability_con {
-					opacity: 1;
-					
-				
-				}
-			}
-		
 		}
-
-
-
 		h2 {
 			max-width: 1180px;
 			margin: 0 auto 50px;
 			position: relative;
 		}
+		.Sustain_box {
+			position:absolute;
+			top:0;
+			left:50%;
+			transform: translateX(-50%);
+			background:$bgColor;
+			padding:50px;text-align: center;
+			h3 {
+				color:#fff;
+			}
+			p {
+				color:#fff;
+			}
+		}
 
 		.Sustainability_con {
-			opacity: 0;
 			position: absolute;
 			bottom: -80px;
 			left: 50%;
 			transform: translateX(-50%);
 			max-width: 1000px;
+			width:100%;
 			transition:1s;
-
 			&::after {
 				content: '';
 				display: block;
 				clear: both;
 			}
-
 			.s_con {
 				position: relative;
 				overflow: hidden;
@@ -747,11 +739,9 @@ main {
 				background: #fff;
 				box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
 				border-bottom: 3px solid $bgColor03;
-
 				//swiper	
 				.Sustainability_slider {
 					height: 100%;
-
 					ul {
 						li {
 							text-align: center;
@@ -766,7 +756,6 @@ main {
 							}
 						}
 					}
-
 					.Sus-pagination {
 						position: absolute;
 						bottom: 10px;
@@ -774,12 +763,10 @@ main {
 						transform: translateX(-50%);
 						text-align: center;
 						z-index: 10;
-
 						.swiper-pagination-bullet-active {
 							background: $bgColor;
 						}
 					}
-
 					.Sus-prev {
 						position: absolute;
 						left: 20px;
@@ -844,7 +831,6 @@ main {
 					}
 
 				}
-
 				.text_box {
 					padding: 50px 20px;
 					box-sizing: border-box;
@@ -881,7 +867,6 @@ main {
 				}
 			}
 		}
-	
 	}
 	/*journal ---------------------------------------------------*/
 	#journal {
@@ -1191,7 +1176,7 @@ main {
 			height: 100vh;
 			width: 100%;
 			max-width: 100%;
-			background: url(../img/island01.jpg) no-repeat center/cover;
+			background: url(../img/main/island01.jpg) no-repeat center/cover;
 			background-attachment: fixed;
 
 			.island_box {
@@ -1332,7 +1317,6 @@ main {
 		}
 	}
 }
-
 /*scroll_list ---------------------------------------------------*/
 .scroll_list{
 	position:fixed; 
@@ -1435,7 +1419,6 @@ main {
 		padding:10px;
 	}
 }
-
 #repairPopup{
 	width:80vw;
 	height:70vh; 
@@ -1498,9 +1481,6 @@ main {
 		font-weight: 700;
 	}
 }
-
-
-
 /*footer ---------------------------------------*/
 #footer {
 	width: 100%;
@@ -1561,19 +1541,14 @@ main {
 //animation
 @keyframes opa {
 	0% {opacity: 0;}
-
 	50% {opacity: 0;}
-
 	51% {opacity: 1;}
-
 	100% {opacity: 1;}
 }
 
 @keyframes aniLeft {
 	0% {transform: translateX(-101%);}
-
 	50% {transform: translateX(0);}
-
 	100% {transform: translateX(101%);}
 }
 @keyframes aniBottom {
@@ -1623,16 +1598,24 @@ main {
 				height:500px;
 			.text_con {
 				height:400px;
+				transform: none;
 			}
 			.btn {
 				left:30px;
 				bottom:0;
+				transform: none;
 			}
 		}
 		}
 		#Sustainability{ 
 			.inner {
 				height:500px;
+				.Sustain_box {
+					padding:20px;
+				}
+				.Sustainability_con {
+					width:90%;
+				}
 			}
 	}
 		#bake {
