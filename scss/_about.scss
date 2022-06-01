@@ -55,10 +55,7 @@ $orgLineColor :#ff6100;
         overflow: hidden;
         margin-bottom: 20px;
       
-        i {
-          opacity: 1;
-          animation: aniLeft both cubic-bezier(0.680, 0, 0.265, 1) 1.2s 0.2s;
-        }
+ 
       }
 
       h2 {
@@ -67,10 +64,7 @@ $orgLineColor :#ff6100;
         margin-bottom: 30px;
         text-align: left;
         font-size: 20px;
-        i {
-          opacity: 1;
-          animation: aniLeft both cubic-bezier(0.680, 0, 0.265, 1) 1.2s 0.2s;
-        }
+ 
       }
 
       p {
@@ -78,9 +72,28 @@ $orgLineColor :#ff6100;
         overflow: hidden;
         font-size: 18px;
         line-height: 1.3;
-        i {
-          opacity: 1;
-          animation: aniLeft both cubic-bezier(0.680, 0, 0.265, 1) 1.2s 0.2s;
+        
+      }
+    }
+    &.on {
+      .text_box {
+        h1 {
+          i {
+            opacity: 1;
+            animation: aniLeft both cubic-bezier(0.680, 0, 0.265, 1) 1.2s 0.2s;
+          }
+        }
+        h2 {
+          i {
+            opacity: 1;
+            animation: aniLeft both cubic-bezier(0.680, 0, 0.265, 1) 1.2s 0.2s;
+          }
+        }
+        p{
+          i {
+            opacity: 1;
+            animation: aniLeft both cubic-bezier(0.680, 0, 0.265, 1) 1.2s 0.2s;
+          }
         }
       }
     }
@@ -107,6 +120,7 @@ $orgLineColor :#ff6100;
         width: calc(33.3333% - 40px);
         margin: 0 20px; 
         transition: 1s;
+        opacity: 0;
 
         &:last-child {
           margin-right: 0;
@@ -158,11 +172,11 @@ $orgLineColor :#ff6100;
           left:0;
         }
       }
-
     }
     &.on {
       ul{
         li {
+          opacity: 1;
           &:nth-of-type(1) {
             top: 0px;
           }
@@ -214,7 +228,7 @@ $orgLineColor :#ff6100;
       .text_line {
         position: absolute;
         width: 100%;
-        top:50%;
+        top:40%;
         transform: translateY(-50%);
         h3{
           position: relative;
@@ -246,7 +260,7 @@ $orgLineColor :#ff6100;
       }
       &:nth-of-type(2){
         right: 0;
-        top:50%;
+        top:45%;
         transform: translateY(-50%);
         .text_line {
           right:120%;
@@ -289,8 +303,6 @@ $orgLineColor :#ff6100;
        }
     }
   }
-
-
   .Organization {
     max-width:1100px;
     margin:0 auto;
@@ -307,9 +319,13 @@ $orgLineColor :#ff6100;
       position: relative;
       z-index: 2;
       p{
+        transition:1s ;
+        opacity: 0;
         font-size: 16px;;
       }
       span {
+        transition: 1s;
+        opacity: 0;
         font-size: 14px;
       }
 
@@ -334,7 +350,7 @@ $orgLineColor :#ff6100;
         position: relative;
         margin: 0 20px;
         float: left;
-
+        
         &::before {
           content: '';
           display: block;
@@ -343,8 +359,10 @@ $orgLineColor :#ff6100;
           left: 50%;
           transform: translateX(-50%);
           width: 1px;
-          height: 100%;
+          opacity: 0;
+          height: 0;
           background: $orgLineColor;
+          transition: 0.5s linear 0.1s;
         }
 
 
@@ -362,6 +380,7 @@ $orgLineColor :#ff6100;
       position: relative;
       max-width: 660px;
       margin: 50px auto;
+      transition: 0.5s;
       &::before {
         content: '';
         display: block;
@@ -370,9 +389,11 @@ $orgLineColor :#ff6100;
         left: 50%;
         transform: translateX(-50%);
         max-width: 440px;
-        width:100%;
+        width:0;
         height: 1px;
         background: $orgLineColor;
+        transition: 0.5s linear  0.1s;
+        opacity: 0;
       }
       li{
         &:nth-child(2) {
@@ -386,6 +407,7 @@ $orgLineColor :#ff6100;
       max-width: 1100px;
       margin: 0 auto;
       position: relative;
+      transition: 0.5s;
       &::before {
         content: '';
         display: block;
@@ -394,9 +416,11 @@ $orgLineColor :#ff6100;
         left: 50%;
         transform: translateX(-50%);
         max-width: 880px;
-        width:100%;
+        width:0;
         height: 1px;
         background: $orgLineColor;
+        transition: 0.5s linear  0.1s;
+        opacity: 0;
       }
       li {
         &:nth-child(3) {
@@ -419,7 +443,34 @@ $orgLineColor :#ff6100;
       }
 
     }
-
+    &.on {
+        .o_box {
+          p, span {
+            opacity: 1;
+          }
+        }
+        ul{
+          li{
+            &::before {
+              height:100%;
+              opacity: 1;
+            }
+          }
+        }
+        .list01 {
+          &::before {
+            width:100%;
+            opacity: 1;
+          }
+        }
+        .list02 {
+          &::before {
+            width:100%;
+            opacity: 1;
+          }
+        }
+      
+    }
   }
 
   // Organization

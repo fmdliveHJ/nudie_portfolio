@@ -299,57 +299,57 @@ btnClose.addEventListener('click', e=>{
 //popup 
 //h1을 클릭했을 때 
 //선그어지는 효과 - 박스 - inner 보이게 처리
-const body = document.querySelector("body"); 
-const repair_open = document.querySelector(".repair_open"); 
-const repairPop = document.querySelector("#repairPopup"); 
-const repair_close = document.querySelector(".repair_close"); 
-const _top = repairPop.querySelector(".top");
-const _right = repairPop.querySelector(".right");
-const _bottom = repairPop.querySelector(".bottom");
-const _left = repairPop.querySelector(".left");
-const _inner =repairPop.querySelector(".inner");
-const repairSpeed = 500; 
+// const body = document.querySelector("body"); 
+// const repair_open = document.querySelector(".repair_open"); 
+// const repairPop = document.querySelector("#repairPopup"); 
+// const repair_close = document.querySelector(".repair_close"); 
+// const _top = repairPop.querySelector(".top");
+// const _right = repairPop.querySelector(".right");
+// const _bottom = repairPop.querySelector(".bottom");
+// const _left = repairPop.querySelector(".left");
+// const _inner =repairPop.querySelector(".inner");
+// const repairSpeed = 500; 
 
-repair_open.addEventListener("click", e=>{
-    e.preventDefault(); 
-    body.classList.add('hidden')
-    repair_close.style.display  = "block";
-    repairPop.style.display = "block"; 
-    repairPop.style.zIndex  = 10;
+// repair_open.addEventListener("click", e=>{
+//     e.preventDefault(); 
+//     body.classList.add('hidden')
+//     repair_close.style.display  = "block";
+//     repairPop.style.display = "block"; 
+//     repairPop.style.zIndex  = 10;
 
-    new Anime(_top,{
-        prop:"width", 
-        value:"100%", 
-        duration : repairSpeed, 
-        callback:()=>{
-          new Anime(_inner,{
-              prop:"opacity", 
-              value:1, 
-              duration : repairSpeed, 
+//     new Anime(_top,{
+//         prop:"width", 
+//         value:"100%", 
+//         duration : repairSpeed, 
+//         callback:()=>{
+//           new Anime(_inner,{
+//               prop:"opacity", 
+//               value:1, 
+//               duration : repairSpeed, 
                
-          })
-      } 
-    })
-}); 
+//           })
+//       } 
+//     })
+// }); 
 
-repair_close.addEventListener("click", e=>{
-    e.preventDefault(); 
-    body.classList.remove('hidden')
-    new Anime(_inner,{
-        prop:"opacity", 
-        value:0, 
-        duration:repairSpeed, 
-        callback:()=>{
-            new Anime(_top,{
-                prop:"width", 
-                value:"0%", 
-                duration:repairSpeed,
-                callback:()=>{
-                  repairPop.style.display = "none";
+// repair_close.addEventListener("click", e=>{
+//     e.preventDefault(); 
+//     body.classList.remove('hidden')
+//     new Anime(_inner,{
+//         prop:"opacity", 
+//         value:0, 
+//         duration:repairSpeed, 
+//         callback:()=>{
+//             new Anime(_top,{
+//                 prop:"width", 
+//                 value:"0%", 
+//                 duration:repairSpeed,
+//                 callback:()=>{
+//                   repairPop.style.display = "none";
                    
-                }
-            });
-        }
+//                 }
+//             });
+//         }
 
-    })
-})
+//     })
+// })

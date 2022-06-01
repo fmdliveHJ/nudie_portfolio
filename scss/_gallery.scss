@@ -1,5 +1,6 @@
 .gallery {
   padding-top:0;
+  /*visaul------------------------------*/
   .visual {
     width: 100%;
     height: calc(100vh - 100px);
@@ -14,38 +15,40 @@
       transform: translateX(-50%);
       z-index: 5;
       overflow: hidden;
-
       .text_box {
-        animation: imgOpa both cubic-bezier(0.680, 0, 0.265, 1) 1.2s 0.2s;
-
         h2 {
+          position: relative;
+          overflow: hidden;
           margin: 50px 0;
           font-size: 50px;
           color: #fff;
           font-family: 'Josefin Sans', sans-serif;
-        }
+          display: inline-block;
 
+        }
         p {
+          position: relative;
+          overflow: hidden;
           font-size: 25px;
           color: #fff;
         }
       }
-
-      i {
-        position: absolute;
-        display: block;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background: $bgColor;
-
-        animation: imgAniLeft both cubic-bezier(0.680, 0, 0.265, 1) 1.2s 0.2s;
+    }
+    &.on {
+      .text_con {
+        .text_box {
+          h2, p {
+          i {
+            animation: aniLeft both cubic-bezier(0.680, 0, 0.265, 1) 1.2s 0.2s;
+            opacity: 1;
+          }
+        }
+        }
       }
     }
   }
 
-
+/*title_gallery------------------------------*/
   .title_gallery {
     margin: 80px 0;
     position: relative;
@@ -62,11 +65,16 @@
         height: 100%;
         position: relative;
         .img {
+          position: relative;
+          overflow: hidden;
           width: 80%;
           height: 500px;
           margin: auto;
           z-index: 1;
           position: relative;
+          i {
+            opacity: 0;
+          }
         }
 
         .t_bg {
@@ -121,10 +129,8 @@
           }
         }
       }
-
       &:last-child {
         margin-top: 180px;
-
         .left {
           .text_box {
             left: auto;
@@ -137,16 +143,14 @@
               }
             }
             p {
-
               .mask_bg {
                 height:100%;
                 animation: aniRight both cubic-bezier(0.68, 0, 0.265, 1) 1.2s 0.2s;
                 opacity: 1;
               }
             }
-  
-            span {
 
+            span {
               .mask_bg {
                 height:100%;
                 animation: aniRight both cubic-bezier(0.68, 0, 0.265, 1) 1.2s 0.2s;
@@ -157,33 +161,55 @@
         }
       }
     }
+    &.on {
+      .con {
+        >div {
+          .pic {
+            i {
+              animation: aniBottom both cubic-bezier(0.68, 0, 0.265, 1) 1.2s 0.2s;
+                opacity: 1;
+            }
+          }
+        }
+      }
+    }
   }
-
+/*box_bg------------------------------*/
   .box_bg {
     position: relative;
     margin: 180px 0 80px;
     height: 600px;
     width: 100%;
-    background: url(../img/gallery/bg02.jpg) no-repeat center/cover;
+    transition:1s linear;
     .text_box {
       position:absolute;
       top:50%;
       left:50%;
       transform: translate(-50%, -50%);
       text-align: center;
-     
+
       p{
         position: relative;
         font-family: $fontJose;
         font-size: 130px;
         color:#fff;
         line-height: 1.2;
-        animation:slideLeft 1.5s ease-in-out forwards, texColor 1s linear 1.5s forwards;
-        &:last-child{
-          animation:slideRight 1.5s ease-in-out forwards, texColor 1s linear 1.5s forwards;
-        }
+        font-weight: 700;
+       
+    
       }
     }
+    &::after {
+      content:'';
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: url(../img/gallery/bg02.jpg) no-repeat center/cover;
+
+
+   
+    }
+
     @keyframes slideLeft {
       from {
     left:-100px;
@@ -210,9 +236,22 @@
         color:$pointColor
       }
     }
-    
+    &.on {
+      background-color:#111;
+      .text_box {
+        p {
+          animation:slideLeft 1.5s ease-in-out forwards, texColor 1s linear 1.5s forwards;
+          &:last-child{
+            animation:slideRight 1.5s ease-in-out forwards, texColor 1s linear 1.5s forwards;
+          }
+        }
+      }
+      &::after {
+        opacity: 0.5;
+      }
+    }
   }
-
+/*gallery_con------------------------------*/
   .gallery_con {
     .inner {
       position: relative;
@@ -402,7 +441,7 @@
   }
 }
 
-
+/*popup------------------------------*/
 aside.pop {
   z-index: 10;
   width: 100%;
@@ -434,7 +473,7 @@ aside.pop {
     cursor: pointer;
   }
 }
-
+/*animation------------------------------*/
 @keyframes aniOpa {
   0% {opacity: 0;}
   50% {opacity: 0;}
@@ -457,6 +496,7 @@ aside.pop {
   100% {height:60%}
 }
 
+/*tablet------------------------------*/
 @media screen and (max-width:$tablet) {
   .gallery {
     padding-top:0;
@@ -493,7 +533,7 @@ aside.pop {
   
   }
 }
-
+/*mini------------------------------*/
 @media screen and (max-width:$mini) {
   .gallery {
     padding-top:0;
@@ -568,7 +608,7 @@ aside.pop {
   
   }
 }
-
+/*mobile------------------------------*/
 @media screen and (max-width:$mobile) {
   .gallery {
     padding-top:0;

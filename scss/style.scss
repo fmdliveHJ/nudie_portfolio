@@ -908,9 +908,18 @@ main {
 
 				.text_box {
 					margin-top: 30px;
+					h3 {
+						width: 100%;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						display: -webkit-box;
+						-webkit-line-clamp: 1;
+						-webkit-box-orient: vertical;
+					}
 
 					p {
 						margin-top: 10px;
+				
 					}
 				}
 
@@ -972,8 +981,9 @@ main {
 				p {
 					margin-top: 10px;
 				}
-				iframe {
+				video {
 					width:100%;
+					cursor: pointer;
 				}
 			}
 

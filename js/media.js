@@ -74,57 +74,18 @@ function closePop(e) {
     if (e.target == close) pop.remove();
   }
 }
+//scroll
+const mediaCon = document.querySelectorAll('section > div');
+const totalNum = mediaCon.length;
 
-
-
-  const visual = document.querySelector(".visual");
-  const media = document.querySelector(".media_info");
-  const youtubeCon = document.querySelector(".youtube_con");
-  const banner = document.querySelector(".banner");
-
-  const visualTop = visual.getBoundingClientRect().top;
-  const mediaTop = media.getBoundingClientRect().top;
-  const youtubeTop = youtubeCon.getBoundingClientRect().top;
-  const bannerTop = banner.getBoundingClientRect().top;
-
-  console.log(mediaTop)
-
-function showValue() {
-let scroll = window.scrollY||window.pageYOffset ; 
-
-console.log(scroll)
-  if(mediaTop <= scroll){
-    media.classList.add('on')
+window.addEventListener("scroll", function (e) {
+  const scroll = this.scrollY;
+  for (let i = 0; i < totalNum; i++) {
+    if (scroll > mediaCon[i].offsetTop - window.outerHeight / 2.5 && scroll < mediaCon[i].offsetTop - window.outerHeight / 2.5 + mediaCon[i].offsetHeight) {
+      mediaCon[i].classList.add('on');
+    } else {
+      mediaCon[i].classList.remove('on');
+    }
   }
-  else {
-    media.classList.remove('on')
-  }
-
-  if(youtubeTop <= scroll){
-    youtubeCon.classList.add('on')
-  }
-  else {
-    youtubeCon.classList.remove('on')
-  }
-
-  if(bannerTop <= scroll){
-    banner.classList.add('on')
-  }
-  else {
-    banner.classList.remove('on')
-  }
-
-
-
-}
-
-
-
-window.addEventListener('scroll' , function() {
-  showValue();
-});
-
-window.addEventListener('resize' , function() {
-  showValue();
-});
+})
 
