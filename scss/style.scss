@@ -12,6 +12,14 @@ $bgColor04 :#f4e1ce;
 
 $fontJose : 'Josefin Sans', sans-serif;
 
+$fontXXXL : 4rem;
+$fontXXL : 3rem;
+$fontXL : 2.5rem;
+$fontL : 2rem;
+$fontML : 1.5rem;
+$fontM : 1rem;
+$fontS : 0.7rem;
+
 @mixin title($fontSize: 24px, $color: #555, $mb: 50px) {
 	font-weight: bold;
 	font-size: $fontSize;
@@ -60,7 +68,6 @@ $fontJose : 'Josefin Sans', sans-serif;
 	transition: 0.5s;
 	padding:0 30px;
 	box-sizing: border-box;
-
 	&.on {
 		background: rgba(0, 0, 0, 0.8);
 
@@ -79,17 +86,17 @@ $fontJose : 'Josefin Sans', sans-serif;
 			top: 50%;
 			transform: translateY(-50%);
 			letter-spacing: 5px;
-
 			>a {
-				font: bold 40px/1 "Oswald";
+				font-size: $fontXXL;
+				font-weight: bold;
+				font-family: "Oswald";
 				color: $pointColor;
 			}
 		}
-
 		// gnb
 		#gnb {
 			position: absolute;
-			left: 250px;
+			left: 300px;
 			top: 50%;
 			transform: translateY(-50%);
 
@@ -105,7 +112,9 @@ $fontJose : 'Josefin Sans', sans-serif;
 				a {
 					display: block;
 					padding: 14px 40px;
-					font: bold 14px/1 "Quicksand";
+					font-size: $fontM;
+					font-family:"Quicksand";
+					font-weight: 700;
 					color: #fff;
 
 					&:hover {
@@ -127,7 +136,8 @@ $fontJose : 'Josefin Sans', sans-serif;
 				margin-left: 20px;
 
 				a {
-					font: 12px/1 "Quicksand";
+					font-size: $fontM;
+					font-family: "Quicksand";
 					color: #999;
 				}
 			}
@@ -356,7 +366,7 @@ main {
 							position: relative;
 							display: inline-block;
 							overflow: hidden;
-							font-size: 18px;
+							font-size: $fontM;
 							
 							color: #fff;
 					
@@ -366,15 +376,18 @@ main {
 							position: relative;
 							overflow: hidden;
 							margin: 50px 0;
-							font-size: 50px;
+							font-size: $fontXXL;
+							line-height: 1.2;
 							color: #fff;
 							font-family: 'Josefin Sans', sans-serif;
+							strong {
+								font-size: $fontXXL;
+							}
 						}
-
 						p {
 							position: relative;
 							overflow: hidden;
-							font-size: 25px;
+							font-size: $fontL;
 							color: #fff;
 						}
 					}
@@ -447,12 +460,11 @@ main {
 				width: 200px;
 				opacity: 1;
 				color: #111;
-				font-size: 20px;
+				font-size: $fontML;
 				transition: 1s;
 				padding: 25px;
 				box-sizing: border-box;
 				font-weight: 700;
-
 			}
 
 			.swiper-pagination-bullet-active {
@@ -511,15 +523,13 @@ main {
 					transition:0.5s;
 					border:3px solid transparent;
 					box-sizing: border-box;
-					
-
 					h2 {
-						font-size: 20px;
+						font-size: $fontML;
 						margin-bottom: 10px;
 					}
 
 					p {
-						font-size: 16px;
+						font-size: $fontM;
 						margin-bottom: 20px;
 						width: 200px;
 						overflow: hidden;
@@ -530,7 +540,7 @@ main {
 					}
 
 					span {
-						font-size: 14px;
+						font-size: $fontS;
 					}
 				}
 				&:nth-of-type(1) {
@@ -616,16 +626,16 @@ main {
 					float: left;
 					transition: 0.5s;
 					h3 {
-						font-size: 2em;
+						font-size: 2rem;
 					}
 					p {
-						font-size: 20px;
+						font-size: $fontML;
 						line-height: 1.2;
 						margin-top: 30px;
 						strong {
 							font-weight: 700;
 							display: block;
-							font-size: 25px;
+							font-size: $fontML;
 							margin-bottom: 30px;
 							color: $bgColor03;
 						}
@@ -711,9 +721,7 @@ main {
 			padding:50px;text-align: center;
 			h3 {
 				color:#fff;
-			}
-			p {
-				color:#fff;
+				font-size: $fontML;
 			}
 		}
 
@@ -750,9 +758,12 @@ main {
 							height: 100%;
 
 							h3 {
-								font-size: 30px;
+								font-size: $fontL;
 								text-align: center;
 								padding-bottom: 50px;
+							}
+							p {
+								font-size: $fontM;
 							}
 						}
 					}
@@ -836,7 +847,7 @@ main {
 					box-sizing: border-box;
 
 					h3 {
-						font-size: 30px;
+						font-size: $fontL;
 						text-align: center;
 						padding-bottom: 50px;
 					}
@@ -849,6 +860,7 @@ main {
 						padding: 10px 20px;
 						width: 300px;
 						margin: 0 auto;
+						font-size: $fontM;
 					}
 
 					a {
@@ -859,6 +871,7 @@ main {
 						width: 200px;
 						margin: 20px auto 0;
 						border: 1px solid $bgColor02;
+						font-size: $fontM;
 
 						i {
 							margin-left: 5px
@@ -894,6 +907,7 @@ main {
 				.text_box {
 					margin-top: 30px;
 					h3 {
+						font-size:$fontM;
 						width: 100%;
 						overflow: hidden;
 						text-overflow: ellipsis;
@@ -904,6 +918,7 @@ main {
 
 					p {
 						margin-top: 10px;
+						font-size:$fontM;
 				
 					}
 				}
@@ -937,12 +952,12 @@ main {
 				width: 50%;
 
 				h3 {
-					font-size: 20px;
+					font-size: $fontML;
 					margin-bottom: 20px;
 				}
 
 				p {
-					font-size: 16px;
+					font-size: $fontM;
 					color: #aaa;
 				}
 			}
@@ -957,7 +972,7 @@ main {
 
 					li {
 						margin-bottom: 10px;
-						font-size: 16px;
+						font-size: $fontM;
 						font-weight: 700;
 					}
 				}
@@ -1000,7 +1015,7 @@ main {
 							left: 0;
 							top: 50%;
 							transform: translateY(-50%);
-							font-size: 3em;
+							font-size: 3rem;
 						}
 
 						.text_box {
@@ -1075,12 +1090,12 @@ main {
 					transition: 1s;
 
 					h3 {
-						font-size: 30px;
+						font-size: $fontL;
 						margin-bottom: 30px;
 					}
 
 					p {
-						font-size: 16px;
+						font-size: $fontM;
 						line-height: 1.5;
 					}
 
@@ -1091,6 +1106,7 @@ main {
 						display: block;
 						text-align: center;
 						background: $bgColor;
+						font-size: $fontM;
 						color: #fff;
 					}
 				}
@@ -1110,7 +1126,7 @@ main {
 				}
 
 				h3 {
-					font-size: 30px;
+					font-size: $fontL;
 					margin-bottom: 20px;
 					float: right;
 				}
@@ -1118,8 +1134,6 @@ main {
 				ul {
 					float: right;
 					width: 100%;
-				
-
 					&::after {
 						content: '';
 						display: block;
@@ -1131,13 +1145,16 @@ main {
 						float: left;
 						width: calc(33.3333% - 20px);
 						margin: 0 10px;
-
+						a {
+							cursor: auto;
+						}
 						.pic {
 							height: 300px;
 						}
 
 						p {
 							margin-top: 20px;
+							font-size:$fontM;
 						}
 					}
 				}
@@ -1188,6 +1205,7 @@ main {
 				padding:50px;text-align: center;
 				h3 {
 					color:#fff;
+					font-size:$fontML
 				}
 				p {
 					color:#fff;
@@ -1205,7 +1223,7 @@ main {
 				.title {
 					position:absolute;
 					color: #fff;
-					font-size: 40px;
+					font-size: $fontXL;
 					left: 50%;
 					bottom: 10px;
 					transform: translate(-50%, -50%);
@@ -1225,10 +1243,11 @@ main {
 							box-sizing: border-box;
 							text-align: center;
 							h3 {
-								font-size: 30px;
+								font-size: $fontML;
 							}
 							p {
 								margin-top:20px;
+								font-size: $fontM;
 							}
 						}
 					}
@@ -1291,6 +1310,7 @@ main {
 					padding: 40px 10px;
 					box-sizing: border-box;
 					font-weight: 700;
+					font-size: $fontML;
 					color: #fff;
 				}
 			}
@@ -1375,8 +1395,7 @@ main {
 	z-index: 100;
 	.cont{
 		width:100%; 
-		min-height:150px; 
-		font-size:30px; 
+		min-height:150px;
 		.pic {
 			width:100%;
 			height:300px;
@@ -1390,10 +1409,12 @@ main {
 			text-align: center;
 			h2 {
 				color:#fff;
+				font-size:$fontXXL;
 				font-family: $fontJose;
 			}
 			p {
 				margin-top:20px;
+				font-size:$fontXL;
 				font-family: $fontJose;
 				color:#fff;
 			}
@@ -1405,14 +1426,15 @@ main {
 	bottom:10px;
 		label{
 			margin-left:10px; 
-			font:12px/1 ; 
+			font-size:$fontM;
 			color:#fff; 
 		}
 	}   
 	.close_btn{
 		position:absolute; 
-		top:-3px; right:-54px; 
-		font-size: 14px;
+		top:-3px;
+		right:-50px;
+		font-size: $fontS;
 		background:$bgColor;
 		color:#fff; 
 		font-weight: 700;
@@ -1499,7 +1521,9 @@ main {
 
 		h1 {
 			float: left;
-			font: bold 24px/1 "Quicksand";
+			font-size: $fontML;
+			font-weight: 700;
+			font-family: "Quicksand";
 			color: #666;
 		}
 
@@ -1512,7 +1536,9 @@ main {
 			
 
 				a {
-					font: bold 14px/1 "Quicksand";
+					font-size:$fontS;
+					font-weight: 700;
+					font-family: "Quicksand";
 					color: #666;
 				}
 			}
@@ -1521,7 +1547,9 @@ main {
 		address {
 			float: left;
 			width: 100%;
-			font: 14px/1.3 "Quicksand";
+			font-size: $fontS;
+			line-height: 1.3;
+			font-family: "Quicksand";
 			color: #777;
 			border-top: 1px solid #888;
 			margin-top: 20px;
@@ -1532,7 +1560,8 @@ main {
 		p {
 			float: left;
 			width: 100%;
-			font: 12px/1 "Quicksand";
+			font-size: $fontS;
+			font-family: "Quicksand";
 			color: #777;
 		}
 	}
@@ -1567,7 +1596,7 @@ main {
 			>h1 {
 				left: 0;
 				a {
-					font-size: 25px;
+					font-size: $fontML;
 				}
 			}
 			.menuWeb {
@@ -1644,14 +1673,14 @@ main {
 					height:50%;
 					width: 80%;
 					.title {
-						font-size: 30px;
+						font-size: $fontL;
 					}
 					.island_slider {
 						ul {
 							li {
 							
 								h3 {
-									font-size: 25px;
+									font-size: $fontML;
 								}
 							}
 						}
@@ -1691,7 +1720,7 @@ main{
 	section {padding:40px 15px;}
 	section > h2,
 	section .inner > h2 {
-		font-size: 2em;
+		font-size: 2rem;
 		margin-bottom:20px;
 	}
 	#visual {
@@ -1702,9 +1731,18 @@ main{
 						width:80%;
 						left: 50%;
 						top: 20%;
-						span {font-size: 14px;}
-						h2 {font-size: 35px;line-height: 1.5;}
-						p {font-size: 20px;}
+						span {
+							font-size: $fontS;
+						}
+
+						h2 {
+							font-size: $fontL;
+							line-height: 1.5;
+						}
+
+						p {
+							font-size: $fontML;
+						}
 
 					}
 				}
@@ -1716,8 +1754,27 @@ main{
 			span {
 				width: 33.3333%;
 				height:50px;
-				font-size: 14px;
+				font-size: $fontS;
 				padding:15px 0;
+			}
+		}
+	}
+	#new {
+		.inner {
+			ul {
+				li {
+					width: 100%;
+					float: none;
+
+					.pic {
+						height: 350px;
+					}
+
+					.text_box {
+						bottom: 0;
+						padding: 10px;
+					}
+				}
 			}
 		}
 	}
@@ -1736,7 +1793,10 @@ main{
 				&:nth-of-type(2)
 				{margin-left:0;}
 				a {
-					i {font-size: 14px;line-height: 30px;}
+					i {
+						font-size: $fontS;
+						line-height: 30px;
+					}
 				}
 			}
 		}
@@ -1750,12 +1810,12 @@ main{
 				li {
 					.text_box{
 					h3 {
-						font-size: 20px;
+						font-size: $fontML;
 					}
 					p {
-						font-size: 16px;
+						font-size: $fontM;
 						strong{
-						font-size: 18px;
+						font-size: $fontML;
 						margin-bottom:15px;
 					}
 					}
@@ -1844,7 +1904,7 @@ main{
 						width:calc( 50% - 20px);
 						margin-bottom:10px;
 						i {
-							font-size: 2em;
+							font-size: 2rem;
 						}
 						.text_box {
 							padding-left:40px;
@@ -1888,7 +1948,7 @@ main{
 				}
 			}
 			.bottom_box {
-				margin-top: 20px;
+				margin:20px 0 0;
 			}
 		}
 	}
@@ -1905,6 +1965,7 @@ main{
 				left: auto;
 				a {
 					padding:20px 10px;
+					font-size:$fontM;
 				}
 			
 			}
@@ -1965,8 +2026,7 @@ main{
 }
 
 @media screen and (max-width: $mobile) {
-	main{
-
+	main {
 		#visual {
 			.visual_slider{
 				.panel{
@@ -1986,25 +2046,12 @@ main{
 				}
 			}
 		}
-		#new {
-			ul {
-				li {
-					width:100%;
-					float:none;
-					.pic {
-						height:350px;
-					}
-					.text_box {
-						bottom:0;
-						padding:10px;
-					}
-				}
-			}
-		}
 		#repair {
+			padding:40px 0;
 			.inner {
 				&::after {
-					height:100%;
+				top:auto;
+				bottom:0;
 				}
 				.top_box {
 
@@ -2019,11 +2066,54 @@ main{
 				}
 				.bottom_box {
 					margin-top: 20px;
+					h3 {}
 					ul{
 						margin:0;
 						li {
 							margin:0 0 30px;
 							width:100%;
+						}
+					}
+				}
+			}
+		}
+		#Sustainability {
+			.inner {
+				.Sustain_box {
+					display: none;
+				}
+
+				.Sustainability_con {
+					.s_con {
+						float: none;
+						width: 100%;
+						height: 200px;
+
+						.Sustainability_slider {
+							ul {
+								li {
+									padding: 15px;
+
+									h3 {
+										font-size: $fontM;
+										padding-bottom: 30px;
+									}
+								}
+							}
+						}
+
+						.text_box {
+							padding: 15px;
+
+							h3 {
+								padding-bottom: 20px;
+								font-size: $fontM;
+							}
+
+							p,
+							a {
+								font-size: $fontS;
+							}
 						}
 					}
 				}
@@ -2048,11 +2138,14 @@ main{
 			.inner {
 				height: 400px;
 				.island_box {
-					padding:20px;
+					display: none;
 				}
 				.island_con {
-					height:60%;
+					height:80%;
 					width:90%;
+					bottom:auto;
+					top:50%;
+					transform: translate(-50%, -50%);
 					.title {
 						font-size: 30px;
 					}
