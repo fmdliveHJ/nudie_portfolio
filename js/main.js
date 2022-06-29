@@ -89,16 +89,16 @@ window.addEventListener('scroll', (e) => {
 })
 
 //scroll
-const aboutCon = document.querySelectorAll('section');
-const totalNum = aboutCon.length;
+const sectionCon = document.querySelectorAll('section');
+const totalNum = sectionCon.length;
 
 window.addEventListener("scroll", function (e) {
   const scroll = this.scrollY;
   for (let i = 0; i < totalNum; i++) {
-    if (scroll > aboutCon[i].offsetTop - window.outerHeight / 3 && scroll < aboutCon[i].offsetTop - window.outerHeight / 3 + aboutCon[i].offsetHeight) {
-      aboutCon[i].classList.add('on');
+    if (scroll > sectionCon[i].offsetTop - window.outerHeight / 3 && scroll < sectionCon[i].offsetTop - window.outerHeight / 3 + sectionCon[i].offsetHeight) {
+      sectionCon[i].classList.add('on');
     } else {
-      aboutCon[i].classList.remove('on');
+      sectionCon[i].classList.remove('on');
     }
   }
 
@@ -194,7 +194,7 @@ function ativation02() {
 // visual
 let menu = ['Bake Your Own', 'Every pair of Nudie Jeans', 'Island Life']
 let swiper = new Swiper(".visual_slider", {
-  autoplay: {
+  autoplay: { 
     delay: 5000,
     disableOnInteraction: false,
   },
@@ -245,7 +245,6 @@ for(let el of skipNavi){
 const popup = document.querySelector('#popup');
 const btnClose = document.querySelector('.close_btn');
 const isCookie = document.cookie.indexOf('today=done');
-
 
 if(isCookie == -1){
   console.log('쿠키없음')

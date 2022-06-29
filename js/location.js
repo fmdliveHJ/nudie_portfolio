@@ -1,12 +1,12 @@
 //loaction
-var mapContainer = document.getElementById('map');   
+let mapContainer = document.getElementById('map');   
 const branch_btns = document.querySelectorAll(".map_list li"); 
 
-var mapOption = { 
+let mapOption = { 
         center: new kakao.maps.LatLng(37.5121, 127.0997), 
         level: 4 
     };
-var map = new kakao.maps.Map(mapContainer, mapOption); 
+let map = new kakao.maps.Map(mapContainer, mapOption); 
 
 let drag = true; 
 let zoom = true; 
@@ -149,12 +149,9 @@ function createList(url) {
       return data.json();
     })
     .then(json => {
-
       let items = json.imgSrc;
       console.log(items);
-
       let tags = '';
-
       items.forEach(item => {
         tags += `
               <li>
@@ -164,9 +161,7 @@ function createList(url) {
               </li>
             `;
       });
-
       list.innerHTML = tags;
-
       initList();
     })
     .catch(err => {
