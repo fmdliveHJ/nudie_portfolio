@@ -31,15 +31,19 @@ btnSearch.addEventListener("click", e => {
     //입력한 검색어가 없을 경우 경고문구 생성
   } else {
     //전에 호출했던 데이터 지우기 
-    frame.innerHTML = "";
+
     frame.style.height = "auto";
 
-    const errMsgs = input.parentElement.querySelectorAll("p");
-    if (errMsgs.length > 0) errMsgs[0].remove();
-
-    const errMsg = document.createElement("p");
-    errMsg.append("Enter search terms");
-    input.parentElement.append(errMsg);
+    frame.innerHTML = "No search results found";
+    frame.innerHTML = `
+    <li class="no_search"> 
+    <p>
+     No search results found
+     </p>
+     </li>
+ `;
+  frame.style.height = "auto";
+  frame.style.transform = "none";
   }
 });
 
@@ -60,15 +64,20 @@ input.addEventListener("keyup", e => {
 
       //입력한 검색어가 없을 경우 경고문구 생성
     } else {
+ 
+
+  
       frame.innerHTML = "No search results found";
-      frame.style.height = "auto";
+      frame.innerHTML = `
+      <li class="no_search"> 
+      <p>
+       No search results found
+       </p>
+       </li>
+   `;
+    frame.style.height = "auto";
+    frame.style.transform = "none";
 
-      const errMsgs = input.parentElement.querySelectorAll("p");
-      if (errMsgs.length > 0) errMsgs[0].remove();
-
-      const errMsg = document.createElement("p");
-      errMsg.append("검색어를 입력하세요");
-      input.parentElement.append(errMsg);
     }
   }
 })
@@ -132,25 +141,24 @@ function callData(url) {
       if (items.length > 0) {
         //동적으로 태그 생성 
         createList(items);
-        //이미지로딩완료후 isotope플러그인 적용 ㄴ
+        //이미지로딩완료후 isotope플러그인 적용
         imgLoaded();
       } else {
-        // console.log("검색하신 검색어의 이미지가 없습니다"); 
 
-        const errMsg = document.createElement("p");
-        errMsg.append("No search results found");
-        input.parentElement.append(errMsg);
+
+
 
         frame.classList.remove("on");
         loading.classList.add("off");
         frame.innerHTML = `
                <li class="no_search"> 
                <p>
-                No search results foundz
+                No search results found
                 </p>
                 </li>
             `;
         frame.style.height = "auto";
+        frame.style.transform = "none";
       }
 
 
@@ -197,15 +205,6 @@ function imgLoaded() {
       img.setAttribute("src", "img/default.jpg");
     }
   });
-
-  //버디아이콘 엑박시 대체이미지로 변경 
-  const buddies = document.querySelectorAll(".profile img");
-  buddies.forEach(buddy => {
-    buddy.onerror = () => {
-      buddy.setAttribute("src", "https://www.flickr.com/images/buddyicon.gif");
-
-    }
-  })
 }
 
 function isoLayout() {
