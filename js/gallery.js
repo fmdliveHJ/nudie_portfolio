@@ -33,8 +33,6 @@ btnSearch.addEventListener("click", e => {
     //전에 호출했던 데이터 지우기 
 
     frame.style.height = "auto";
-
-    frame.innerHTML = "No search results found";
     frame.innerHTML = `
     <li class="no_search"> 
     <p>
@@ -64,10 +62,6 @@ input.addEventListener("keyup", e => {
 
       //입력한 검색어가 없을 경우 경고문구 생성
     } else {
- 
-
-  
-      frame.innerHTML = "No search results found";
       frame.innerHTML = `
       <li class="no_search"> 
       <p>
@@ -144,10 +138,6 @@ function callData(url) {
         //이미지로딩완료후 isotope플러그인 적용
         imgLoaded();
       } else {
-
-
-
-
         frame.classList.remove("on");
         loading.classList.add("off");
         frame.innerHTML = `
@@ -160,8 +150,6 @@ function callData(url) {
         frame.style.height = "auto";
         frame.style.transform = "none";
       }
-
-
     });
 }
 
