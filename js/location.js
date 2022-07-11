@@ -39,7 +39,7 @@ let zoom = true;
  ]; 
 
  for(let i=0; i<markerOptions.length; i++){
-    var marker = new kakao.maps.Marker({
+    let marker = new kakao.maps.Marker({
         map: map, 
         position: markerOptions[i].latlng,  
         title : markerOptions[i].title,  
@@ -68,11 +68,11 @@ window.addEventListener("resize",()=>{
 }); 
  
 
-var mapTypeControl = new kakao.maps.MapTypeControl();
+let mapTypeControl = new kakao.maps.MapTypeControl();
 map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
 
 
-var zoomControl = new kakao.maps.ZoomControl();
+let zoomControl = new kakao.maps.ZoomControl();
 map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
 
@@ -87,7 +87,7 @@ function setZoomable(zoomable) {
 } 
 
 function moveTo(target) {                
-    var moveLatLon = target;    
+    let moveLatLon = target;    
     map.setCenter(moveLatLon);
 }
 

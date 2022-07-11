@@ -279,9 +279,6 @@ const repair_open = document.querySelector(".repair_open");
 const repairPop = document.querySelector("#repairPopup"); 
 const repair_close = document.querySelector(".repair_close"); 
 const _top = repairPop.querySelector(".top");
-const _right = repairPop.querySelector(".right");
-const _bottom = repairPop.querySelector(".bottom");
-const _left = repairPop.querySelector(".left");
 const _inner =repairPop.querySelector(".inner");
 const repairSpeed = 500; 
 
