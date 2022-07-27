@@ -226,10 +226,10 @@ function createPop(imgSrc) {
   const pop = document.createElement("aside");
   pop.classList.add("pop");
   pop.innerHTML = `
-                <div class="pic">
-                    <img src=${imgSrc}>
-                </div>
-                <span>CLOSE</span>
+      <div class="pic">
+          <img src=${imgSrc}>
+      </div>
+      <span>CLOSE</span>
     `;
 
   document.body.append(pop);
